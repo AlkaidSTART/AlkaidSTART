@@ -219,10 +219,6 @@
 <br/>
 
 <!-- Live Events Stream (Updated via GitHub Events API & Actions) -->
-<details open>
-<summary>⚡ <b>GitHub 实时动态脉冲 (Live Events Stream)</b> <i>── 基于 GitHub Events API 持续自动同步</i></summary>
-<br/>
-
 <!-- START_SECTION:activity -->
 - 🔨 推送了最新提交至 **[AlkaidSTART/call-code](https://github.com/AlkaidSTART/call-code)** ── *"feat: improve context memory & CLI tools"*
 - 🔨 推送了最新架构设计至 **[AlkaidSTART/coderelay](https://github.com/AlkaidSTART/coderelay)** ── *"feat: intelligent agent router with TUI session"*
@@ -230,15 +226,9 @@
 - 📡 *（由 GitHub Actions 定时调用 GitHub Events API 持续自动同步）*
 <!-- END_SECTION:activity -->
 
-</details>
-
 <br/>
 
 <!-- Dimension: Contribution Snake Game -->
-<details open>
-<summary>🐍 <b>极客星轨 · 热力图贪吃蛇 (Contribution Heatmap Snake)</b></summary>
-<br/>
-
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake-dark.svg" />
@@ -246,8 +236,6 @@
     <img src="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake-dark.svg" alt="GitHub Contribution Snake Animation" width="100%" />
   </picture>
 </div>
-
-</details>
 
 <br/>
 
