@@ -79,6 +79,7 @@
 - 开源 [**coderelay**](https://github.com/AlkaidSTART/coderelay) ── 多 Coding Agent 智能路由网关与交互式 TUI，任务自适应调度并接管 TTY 会话
 - 支持自然语言驱动全盘文件读写、上下文长期记忆、自主任务规划与命令执行
 - 打造 [**simple-design**](https://simple-design-zeta.vercel.app) ── 缩短“灵感”到“成品”的设计工具
+- 开源阵地 / Gitee：[**ALIOTHK**](https://gitee.com/ALIOTHK)
 </details>
 
 <details>
@@ -271,5 +272,10 @@
 <br/>
 
 <div align="center">
+  <a href="https://alkaid.live">Blog</a> &nbsp;·&nbsp;
+  <a href="https://github.com/AlkaidSTART">GitHub</a> &nbsp;·&nbsp;
+  <a href="https://gitee.com/ALIOTHK">Gitee</a> &nbsp;·&nbsp;
+  <a href="https://juejin.cn/user/3780587447942084">掘金</a>
+  <br/><br/>
   <sub>✨ <i>"Gaze at the stars, yet stay grounded."</i> · 持续把想法变成现实中...</sub>
 </div>
