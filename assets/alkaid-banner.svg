@@ -1,36 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 260" width="100%" height="100%">
   <defs>
-    <!-- Background Gradients -->
+    <!-- Background: Pure Obsidian Black -->
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080b14"/>
-      <stop offset="45%" stop-color="#0d1326"/>
-      <stop offset="100%" stop-color="#060913"/>
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="50%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
 
-    <!-- Star Glow Gradients -->
+    <!-- Star Glow Gradients (Crisp Pure White & Cyan, No Purple) -->
     <radialGradient id="alkaid-glow" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#38bdf8" stop-opacity="1"/>
-      <stop offset="35%" stop-color="#6366f1" stop-opacity="0.6"/>
-      <stop offset="70%" stop-color="#3b82f6" stop-opacity="0.2"/>
+      <stop offset="35%" stop-color="#0284c7" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#0369a1" stop-opacity="0.15"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
 
     <radialGradient id="star-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
-      <stop offset="40%" stop-color="#a78bfa" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#e2e8f0" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
 
+    <!-- Constellation Lines: Crisp Starlight Silver & Cyan -->
     <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.3"/>
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.5"/>
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.6"/>
     </linearGradient>
 
+    <!-- Text: Platinum / Metallic White -->
     <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="50%" stop-color="#bae6fd"/>
-      <stop offset="100%" stop-color="#c4b5fd"/>
+      <stop offset="60%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
     </linearGradient>
 
     <!-- Filter for Glow -->
@@ -52,12 +54,12 @@
       .line-pulse   { animation: lineGlow 4s infinite ease-in-out; }
 
       @keyframes twinkle {
-        0%, 100% { opacity: 0.25; transform: scale(0.8); }
+        0%, 100% { opacity: 0.2; transform: scale(0.8); }
         50% { opacity: 0.95; transform: scale(1.2); }
       }
 
       @keyframes pulseAlkaid {
-        0%, 100% { transform: scale(1); opacity: 0.9; }
+        0%, 100% { transform: scale(1); opacity: 0.85; }
         50% { transform: scale(1.18); opacity: 1; }
       }
 
@@ -68,14 +70,14 @@
 
       @keyframes lineGlow {
         0%, 100% { stroke-opacity: 0.35; stroke-dashoffset: 0; }
-        50% { stroke-opacity: 0.85; stroke-dashoffset: 20; }
+        50% { stroke-opacity: 0.9; stroke-dashoffset: 20; }
       }
 
       .text-sub {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         font-size: 11px;
         letter-spacing: 2px;
-        fill: #94a3b8;
+        fill: #71717a;
       }
       .text-title {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -94,17 +96,17 @@
         font-family: 'SF Mono', Consolas, Monaco, monospace;
         font-size: 9.5px;
         letter-spacing: 1px;
-        fill: #475569;
+        fill: #52525b;
       }
     </style>
   </defs>
 
-  <!-- Canvas Surface -->
+  <!-- Canvas Surface (Pure Black) -->
   <rect width="840" height="260" rx="16" fill="url(#bg-grad)"/>
-  <rect width="840" height="260" rx="16" fill="none" stroke="#1e293b" stroke-width="1.2"/>
+  <rect width="840" height="260" rx="16" fill="none" stroke="#262626" stroke-width="1.2"/>
 
-  <!-- Subtle Coordinate Grid Lines -->
-  <g stroke="#334155" stroke-opacity="0.12" stroke-width="0.8" stroke-dasharray="3 6">
+  <!-- Subtle Coordinate Grid Lines (Neutral Gray on Black) -->
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="0.8" stroke-dasharray="3 6">
     <line x1="40" y1="65" x2="800" y2="65"/>
     <line x1="40" y1="130" x2="800" y2="130"/>
     <line x1="40" y1="195" x2="800" y2="195"/>
@@ -113,31 +115,22 @@
     <line x1="640" y1="20" x2="640" y2="240"/>
   </g>
 
-  <!-- Ambient Cosmic Dust / Stars -->
+  <!-- Ambient Cosmic Dust / Stars (Pure White / Ice Blue) -->
   <g>
     <circle cx="85" cy="45" r="1" fill="#ffffff" class="twinkle-fast"/>
-    <circle cx="160" cy="190" r="1.2" fill="#bae6fd" class="twinkle-med"/>
+    <circle cx="160" cy="190" r="1.1" fill="#ffffff" class="twinkle-med"/>
     <circle cx="230" cy="70" r="0.8" fill="#ffffff" class="twinkle-slow"/>
-    <circle cx="310" cy="220" r="1.1" fill="#e0e7ff" class="twinkle-fast"/>
+    <circle cx="310" cy="220" r="1" fill="#e2e8f0" class="twinkle-fast"/>
     <circle cx="370" cy="40" r="0.9" fill="#ffffff" class="twinkle-med"/>
     <circle cx="500" cy="210" r="1" fill="#bae6fd" class="twinkle-slow"/>
-    <circle cx="610" cy="50" r="1.3" fill="#ffffff" class="twinkle-fast"/>
-    <circle cx="770" cy="85" r="0.8" fill="#e0e7ff" class="twinkle-med"/>
+    <circle cx="610" cy="50" r="1.2" fill="#ffffff" class="twinkle-fast"/>
+    <circle cx="770" cy="85" r="0.8" fill="#ffffff" class="twinkle-med"/>
     <circle cx="790" cy="205" r="1" fill="#ffffff" class="twinkle-slow"/>
     <circle cx="110" cy="130" r="0.7" fill="#ffffff" class="twinkle-med"/>
     <circle cx="480" cy="75" r="0.8" fill="#ffffff" class="twinkle-fast"/>
   </g>
 
   <!-- Big Dipper (北斗七星) Constellation Lines -->
-  <!-- Coordinates:
-       Dubhe(130, 75)
-       Merak(140, 165)
-       Phecda(270, 175)
-       Megrez(285, 100)
-       Alioth(420, 85)
-       Mizar(555, 105)
-       Alkaid(705, 165)
-  -->
   <g class="line-pulse" stroke="url(#line-grad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#bloom)">
     <!-- Spoon Bowl -->
     <line x1="130" y1="75" x2="140" y2="165"/>
@@ -153,43 +146,43 @@
   <!-- Stars 1 to 6 (天枢、天璇、天玑、天权、玉衡、开阳) -->
   <g filter="url(#bloom)">
     <!-- Dubhe 天枢 -->
-    <circle cx="130" cy="75" r="14" fill="url(#star-glow)"/>
-    <circle cx="130" cy="75" r="3.2" fill="#ffffff"/>
-    <text x="130" y="60" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">天枢 · Dubhe</text>
+    <circle cx="130" cy="75" r="13" fill="url(#star-glow)"/>
+    <circle cx="130" cy="75" r="3" fill="#ffffff"/>
+    <text x="130" y="60" text-anchor="middle" font-size="9" fill="#a1a1aa" font-family="sans-serif">天枢 · Dubhe</text>
 
     <!-- Merak 天璇 -->
-    <circle cx="140" cy="165" r="13" fill="url(#star-glow)"/>
-    <circle cx="140" cy="165" r="3" fill="#ffffff"/>
-    <text x="140" y="185" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">天璇 · Merak</text>
+    <circle cx="140" cy="165" r="12" fill="url(#star-glow)"/>
+    <circle cx="140" cy="165" r="2.8" fill="#ffffff"/>
+    <text x="140" y="185" text-anchor="middle" font-size="9" fill="#a1a1aa" font-family="sans-serif">天璇 · Merak</text>
 
     <!-- Phecda 天玑 -->
-    <circle cx="270" cy="175" r="13" fill="url(#star-glow)"/>
-    <circle cx="270" cy="175" r="3" fill="#ffffff"/>
-    <text x="270" y="195" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">天玑 · Phecda</text>
+    <circle cx="270" cy="175" r="12" fill="url(#star-glow)"/>
+    <circle cx="270" cy="175" r="2.8" fill="#ffffff"/>
+    <text x="270" y="195" text-anchor="middle" font-size="9" fill="#a1a1aa" font-family="sans-serif">天玑 · Phecda</text>
 
     <!-- Megrez 天权 -->
-    <circle cx="285" cy="100" r="12" fill="url(#star-glow)"/>
-    <circle cx="285" cy="100" r="2.8" fill="#ffffff"/>
-    <text x="285" y="85" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">天权 · Megrez</text>
+    <circle cx="285" cy="100" r="11" fill="url(#star-glow)"/>
+    <circle cx="285" cy="100" r="2.6" fill="#ffffff"/>
+    <text x="285" y="85" text-anchor="middle" font-size="9" fill="#a1a1aa" font-family="sans-serif">天权 · Megrez</text>
 
     <!-- Alioth 玉衡 -->
-    <circle cx="420" cy="85" r="15" fill="url(#star-glow)"/>
-    <circle cx="420" cy="85" r="3.5" fill="#ffffff"/>
-    <text x="420" y="70" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">玉衡 · Alioth</text>
+    <circle cx="420" cy="85" r="14" fill="url(#star-glow)"/>
+    <circle cx="420" cy="85" r="3.2" fill="#ffffff"/>
+    <text x="420" y="70" text-anchor="middle" font-size="9" fill="#a1a1aa" font-family="sans-serif">玉衡 · Alioth</text>
 
     <!-- Mizar 开阳 -->
-    <circle cx="555" cy="105" r="15" fill="url(#star-glow)"/>
-    <circle cx="555" cy="105" r="3.4" fill="#ffffff"/>
-    <text x="555" y="90" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">开阳 · Mizar</text>
+    <circle cx="555" cy="105" r="14" fill="url(#star-glow)"/>
+    <circle cx="555" cy="105" r="3.2" fill="#ffffff"/>
+    <text x="555" y="90" text-anchor="middle" font-size="9" fill="#a1a1aa" font-family="sans-serif">开阳 · Mizar</text>
   </g>
 
   <!-- Star 7: ALKAID (摇光 · 破军之光) - Master Featured Star -->
   <g>
-    <!-- Radiating Energy Ripples -->
+    <!-- Radiating Energy Ripples (Cyan & White) -->
     <circle cx="705" cy="165" r="24" fill="none" stroke="#38bdf8" class="ripple"/>
-    <circle cx="705" cy="165" r="24" fill="none" stroke="#818cf8" class="ripple-delay"/>
+    <circle cx="705" cy="165" r="24" fill="none" stroke="#ffffff" class="ripple-delay"/>
 
-    <!-- Large Aura Glow -->
+    <!-- Large Radiant Aura Glow -->
     <circle cx="705" cy="165" r="42" fill="url(#alkaid-glow)" class="pulse-alkaid"/>
 
     <!-- Celestial Orbit Ring -->

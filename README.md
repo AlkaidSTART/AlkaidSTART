@@ -184,8 +184,8 @@
 ### 📊 开发者全息雷达
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=AlkaidSTART&show_icons=true&theme=tokyonight&hide_border=true&title_color=38bdf8&icon_color=c084fc&text_color=94a3b8&bg_color=0b0f19" height="150" alt="Alkaid Github Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AlkaidSTART&layout=compact&theme=tokyonight&hide_border=true&title_color=38bdf8&text_color=94a3b8&bg_color=0b0f19" height="150" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api?username=AlkaidSTART&show_icons=true&hide_border=true&title_color=38bdf8&icon_color=38bdf8&text_color=a1a1aa&bg_color=000000" height="150" alt="Alkaid Github Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AlkaidSTART&layout=compact&hide_border=true&title_color=38bdf8&text_color=a1a1aa&bg_color=000000" height="150" alt="Top Languages" />
 </div>
 
 <br/>
