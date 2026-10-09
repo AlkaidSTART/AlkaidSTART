@@ -5,11 +5,6 @@
   <img src="./assets/alkaid-banner.svg" alt="Alkaid Constellation Banner" width="100%" />
 </a>
 
-<br/>
-
-<!-- Terminal Runtime Status (SVG) -->
-<img src="./assets/terminal-agent.svg" alt="Alkaid CLI Agent Status" width="100%" />
-
 <br/><br/>
 
 <p align="center">
@@ -196,6 +191,23 @@
 - 📦 关注与构建 AI Agent、全栈微服务与交互式工具生态
 - 📡 *（由 GitHub Actions 定时调用 GitHub Events API 持续自动同步）*
 <!-- END_SECTION:activity -->
+
+</details>
+
+<br/>
+
+<!-- Dimension: Contribution Snake Game -->
+<details open>
+<summary>🐍 <b>极客星轨 · 热力图贪吃蛇 (Contribution Heatmap Snake)</b></summary>
+<br/>
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake.svg" />
+    <img src="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake-dark.svg" alt="GitHub Contribution Snake Animation" width="100%" />
+  </picture>
+</div>
 
 </details>
 
