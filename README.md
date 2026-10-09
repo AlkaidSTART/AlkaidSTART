@@ -34,11 +34,12 @@
 > *“Alkaid（摇光）· 北斗之末 · 破军之位。每颗星辰，对应造物的一维法则。”*
 
 <details>
-<summary>⭐ <b>01. 天枢 · Dubhe</b> ── 前端全景：React & Vue 双核工程化与底层机理</summary>
+<summary>⭐ <b>01. 天枢 · Dubhe</b> ── 前端与跨端全景：React & Vue 双核、多端工程化与底层机理</summary>
 <br/>
 
 - 深度掌握 **React**（Fiber 架构、调度机制、Hooks 状态模型）与 **Vue**（响应式原理、组合式 API）
-- 追求极致的组件抽象与工程构建效率（Vite, Next.js, Turborepo）
+- 追求极致的组件抽象与工程构建效率（Vite, Next.js, Turborepo，现代包管理 Bun / pnpm / npm）
+- 全端覆盖实践：掌握 **Flutter**、**uni-app** 跨平台应用开发，以及 **Tauri 2**、**Electron** 桌面端轻量高效构建
 - 深入源码探究运行本质，让每一次状态变更与界面渲染都清晰可控
 </details>
 
@@ -56,6 +57,7 @@
 
 - **Go + Gin**：构建高并发、轻量级、低延迟的网络服务与微服务基建
 - **Python + FastAPI**：打造高性能现代异步 API，作为 AI 与数据工程的坚实底座
+- **现代持久化与 BaaS**：熟练运用 **PostgreSQL**、**MySQL**、**SQLite**、**Redis**、**MongoDB**，协同 **Prisma** / **TypeORM** 与 **Supabase** 平台高效构筑数据中枢
 </details>
 
 <details>
@@ -143,6 +145,19 @@
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
   <br/><br/>
+  <!-- Cross-Platform & Desktop -->
+  <b>Cross-Platform &amp; Desktop:</b><br/>
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
+  <img src="https://img.shields.io/badge/uni--app-2B9939?style=flat-square&logo=vuedotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tauri_2-24C8DB?style=flat-square&logo=tauri&logoColor=white" />
+  <img src="https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white" />
+  <br/><br/>
+  <!-- Package Managers -->
+  <b>Package Managers:</b><br/>
+  <img src="https://img.shields.io/badge/Bun-000000?style=flat-square&logo=bun&logoColor=white" />
+  <img src="https://img.shields.io/badge/pnpm-F69220?style=flat-square&logo=pnpm&logoColor=white" />
+  <img src="https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white" />
+  <br/><br/>
   <!-- Backend -->
   <b>Backend &amp; High-Concurrency:</b><br/>
   <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" />
@@ -151,7 +166,20 @@
   <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" />
   <img src="https://img.shields.io/badge/Bun-000000?style=flat-square&logo=bun&logoColor=white" />
+  <br/><br/>
+  <!-- Databases & Storage -->
+  <b>Databases &amp; Storage:</b><br/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
   <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" />
+  <br/><br/>
+  <!-- ORM & BaaS -->
+  <b>ORM &amp; BaaS:</b><br/>
+  <img src="https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeORM-FE0803?style=flat-square&logo=typeorm&logoColor=white" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" />
   <br/><br/>
   <!-- AI & Agents -->
   <b>AI &amp; Agent Engineering:</b><br/>
