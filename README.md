@@ -103,47 +103,6 @@
 
 ---
 
-### 🎲 极客互动盲盒 `[点击翻牌]`
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-<details>
-<summary>🥠 <b>抽取今日极客签文</b></summary>
-
-```yaml
-今日运势: 大吉（代码如丝般顺滑）
-宜: 重构祖传屎山, 封装优雅 Hook, 按时下班
-忌: 周五傍晚推生产, 不加注释的正则黑魔法
-彩蛋: 此时仰望星空 30 秒，灵感 +99%
-```
-
-</details>
-
-</td>
-<td width="50%" valign="top">
-
-<details>
-<summary>🪵 <b>赛博功德 & 0 Bug 发生器</b></summary>
-
-```
-  ┌───────────────────────────┐
-  │   [ 赛博木鱼 · 咚！ ]     │
-  │   功德 +1 · 内存泄漏 -10MB │
-  │   Bug 概率 -99.9%         │
-  │   头发茂密度 +100% ✨      │
-  └───────────────────────────┘
-```
-
-</details>
-
-</td>
-</tr>
-</table>
-
----
-
 ### 🔥 代表造物 & 代表作
 
 <!-- GitHub Real-time Pinned Repo Cards API -->
@@ -259,12 +218,16 @@
 <br/>
 
 <!-- Dimension 5: Easter Egg - Contribution Snake Game -->
-<details>
+<details open>
 <summary>🐍 <b>极客彩蛋 · 贪吃蛇吞噬热力图 (Contribution Snake Game)</b></summary>
 <br/>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake.svg" />
+    <img src="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
+  </picture>
 </div>
 
 </details>
