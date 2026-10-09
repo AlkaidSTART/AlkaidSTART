@@ -52,10 +52,10 @@
     <text x="40" y="0" fill="#a1a1aa">Codename</text>
     <text x="125" y="0" fill="#52525b">:</text>
     <text x="145" y="0" fill="#38bdf8" font-weight="bold">Alkaid</text>
-    <text x="210" y="0" fill="#71717a">(摇光 · 北斗之末 · 破军星)</text>
-    <text x="460" y="0" fill="#52525b">|</text>
-    <text x="480" y="0" fill="#a1a1aa">Location :</text>
-    <text x="560" y="0" fill="#f4f4f5">Chengdu, CN 📍</text>
+    <text x="205" y="0" fill="#71717a">(摇光)</text>
+    <text x="310" y="0" fill="#52525b">|</text>
+    <text x="330" y="0" fill="#a1a1aa">Location :</text>
+    <text x="410" y="0" fill="#f4f4f5">Chengdu, CN 📍</text>
 
     <!-- Line 2 -->
     <text x="16" y="22" fill="#38bdf8">├─</text>
