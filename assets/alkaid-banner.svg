@@ -149,10 +149,8 @@
     <text x="705" y="187" text-anchor="middle" class="alkaid-label">摇光 · Alkaid</text>
   </g>
 
-  <!-- Subtle Astronomy & Brand Reference -->
+  <!-- Subtle Astronomy Reference -->
   <g transform="translate(42, 226)">
-    <text x="0" y="0" class="text-brand" font-size="12" fill="url(#text-grad)">ALKAID</text>
-    <text x="72" y="-1" class="text-sub">/ 北斗之末 · 破军星位</text>
     <text x="760" y="0" class="text-coord" text-anchor="end">URSA MAJOR · η UMa</text>
   </g>
 </svg>

@@ -10,7 +10,7 @@
 <!-- Terminal Runtime Status (SVG) -->
 <img src="./assets/terminal-agent.svg" alt="Alkaid CLI Agent Status" width="100%" />
 
-<br/>
+<br/><br/>
 
 <p align="center">
   <a href="https://alkaid.live"><img src="https://img.shields.io/badge/Blog-alkaid.live-38bdf8?style=for-the-badge&logo=safari&logoColor=white" alt="Blog"/></a>
@@ -176,16 +176,7 @@
 
 ### 📊 GitHub 全息遥测枢纽 (Real-Time Telemetry Hub)
 
-<!-- Dimension 1: Profile Trophy Badges (GitHub API Achievement Wall) -->
-<div align="center">
-  <a href="https://github.com/AlkaidSTART">
-    <img src="https://github-profile-trophy.vercel.app/?username=AlkaidSTART&theme=onedark&no-frame=true&no-bg=true&margin_w=4&margin_h=4&column=7" alt="GitHub Trophies" />
-  </a>
-</div>
-
-<br/>
-
-<!-- Dimension 2: 3-Pillar Holographic Console (Stats + Streak + Languages) -->
+<!-- 3-Pillar Holographic Console (Stats + Streak + Languages) -->
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=AlkaidSTART&show_icons=true&hide_border=true&title_color=38bdf8&icon_color=38bdf8&text_color=a1a1aa&bg_color=000000&include_all_commits=true&count_private=true" height="155" alt="Alkaid Github Stats" />
   <img src="https://streak-stats.demolab.com/?user=AlkaidSTART&theme=tokyonight&hide_border=true&border_radius=8&background=000000&stroke=38bdf8&ring=38bdf8&fire=38bdf8&currStreakNum=38bdf8&sideNums=a1a1aa&sideLabels=71717a&dates=71717a" height="155" alt="Alkaid Streak Stats" />
@@ -194,14 +185,7 @@
 
 <br/>
 
-<!-- Dimension 3: Real-time Contribution Activity Pulse (Past 30 Days) -->
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=AlkaidSTART&custom_title=GitHub%20Activity%20Pulse%20(Recent%20Days)&theme=tokyo-night&hide_border=true&bg_color=000000&color=38bdf8&line=38bdf8&point=38bdf8&area=true&area_color=0284c7" width="100%" alt="GitHub Activity Pulse Graph" />
-</div>
-
-<br/>
-
-<!-- Dimension 4: Live Events Stream (Updated via GitHub Events API & Actions) -->
+<!-- Live Events Stream (Updated via GitHub Events API & Actions) -->
 <details open>
 <summary>⚡ <b>GitHub 实时动态脉冲 (Live Events Stream)</b> <i>── 基于 GitHub Events API 持续自动同步</i></summary>
 <br/>
@@ -212,23 +196,6 @@
 - 📦 关注与构建 AI Agent、全栈微服务与交互式工具生态
 - 📡 *（由 GitHub Actions 定时调用 GitHub Events API 持续自动同步）*
 <!-- END_SECTION:activity -->
-
-</details>
-
-<br/>
-
-<!-- Dimension 5: Easter Egg - Contribution Snake Game -->
-<details open>
-<summary>🐍 <b>极客彩蛋 · 贪吃蛇吞噬热力图 (Contribution Snake Game)</b></summary>
-<br/>
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake.svg" />
-    <img src="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
-  </picture>
-</div>
 
 </details>
 
