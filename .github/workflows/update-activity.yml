@@ -1,0 +1,38 @@
+name: Refresh GitHub Real-time Activity Pulse
+
+on:
+  schedule:
+    # Runs every 6 hours automatically
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/scripts/**"
+
+jobs:
+  telemetry-pulse:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fetch and Sync GitHub Events API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 .github/scripts/update_activity.py
+
+      - name: Push Telemetry Update
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "AlkaidSTART-Telemetry-Bot"
+          git diff --quiet README.md || (git add README.md && git commit -m "chore(telemetry): sync real-time GitHub activity pulse [skip ci]" && git push)

@@ -79,17 +79,28 @@
 
     <!-- Line 4 -->
     <text x="16" y="66" fill="#38bdf8">╰─</text>
-    <text x="40" y="66" fill="#a1a1aa">Mission</text>
+    <text x="40" y="66" fill="#a1a1aa">Toolchain</text>
     <text x="125" y="66" fill="#52525b">:</text>
-    <text x="145" y="66" fill="#fbbf24">“持续把脑海中野生有趣的想法，敲成可触摸的现实 ✨”</text>
+    <text x="145" y="66" fill="#f4f4f5">Next.js</text>
+    <text x="215" y="66" fill="#52525b">·</text>
+    <text x="230" y="66" fill="#f4f4f5">Vite</text>
+    <text x="275" y="66" fill="#52525b">·</text>
+    <text x="290" y="66" fill="#f4f4f5">Bun &amp; Node.js</text>
+    <text x="405" y="66" fill="#52525b">·</text>
+    <text x="420" y="66" fill="#f4f4f5">Cloudflare &amp; Vercel</text>
   </g>
 
-  <!-- Interactive Prompt Line with Blinking Cursor -->
+  <!-- Interactive Prompt Line with Blinking Cursor & GitHub Telemetry -->
   <g transform="translate(28, 182)" class="mono" font-size="12.5">
     <text x="0" y="0" fill="#10b981">❯</text>
     <text x="16" y="0" fill="#34d399">ready</text>
     <text x="65" y="0" fill="#52525b">to explore constellation?</text>
     <rect x="255" y="-11" width="8" height="15" fill="#38bdf8" class="cursor"/>
-  </g>
 
+    <!-- Real-time GitHub API Pulse Indicator -->
+    <g transform="translate(585, -2)">
+      <circle cx="0" cy="-4" r="3.5" fill="#10b981"/>
+      <text x="12" y="0" fill="#71717a" font-size="11">api.github.com: 200 OK</text>
+    </g>
+  </g>
 </svg>

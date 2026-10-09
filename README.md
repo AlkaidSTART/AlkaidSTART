@@ -15,8 +15,18 @@
 <p align="center">
   <a href="https://alkaid.live"><img src="https://img.shields.io/badge/Blog-alkaid.live-38bdf8?style=for-the-badge&logo=safari&logoColor=white" alt="Blog"/></a>
   <a href="https://github.com/AlkaidSTART/call-code"><img src="https://img.shields.io/badge/Agent-call--code-c084fc?style=for-the-badge&logo=gnubash&logoColor=white" alt="call-code"/></a>
+  <a href="https://github.com/AlkaidSTART/coderelay"><img src="https://img.shields.io/badge/Router-coderelay-f59e0b?style=for-the-badge&logo=gnubash&logoColor=white" alt="coderelay"/></a>
   <a href="https://simple-design-zeta.vercel.app"><img src="https://img.shields.io/badge/Product-simple--design-34d399?style=for-the-badge&logo=figma&logoColor=white" alt="simple-design"/></a>
   <a href="https://juejin.cn/user/3780587447942084"><img src="https://img.shields.io/badge/Writing-掘金-1e80ff?style=for-the-badge&logo=juejin&logoColor=white" alt="Juejin"/></a>
+</p>
+
+<!-- Real-time GitHub API Telemetry Capsule Bar -->
+<p align="center">
+  <a href="https://github.com/AlkaidSTART?tab=followers"><img src="https://img.shields.io/github/followers/AlkaidSTART?style=flat-square&logo=github&logoColor=white&label=Followers&labelColor=141414&color=38bdf8" alt="Followers"/></a>
+  <a href="https://github.com/AlkaidSTART?tab=repositories"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2FAlkaidSTART&query=%24.public_repos&label=Public%20Repos&style=flat-square&logo=git&logoColor=white&labelColor=141414&color=34d399" alt="Public Repos"/></a>
+  <a href="https://github.com/AlkaidSTART/call-code"><img src="https://img.shields.io/github/stars/AlkaidSTART/call-code?style=flat-square&logo=github&logoColor=white&label=call-code%20Stars&labelColor=141414&color=f59e0b" alt="call-code stars"/></a>
+  <a href="https://github.com/AlkaidSTART/coderelay"><img src="https://img.shields.io/github/stars/AlkaidSTART/coderelay?style=flat-square&logo=github&logoColor=white&label=coderelay%20Stars&labelColor=141414&color=c084fc" alt="coderelay stars"/></a>
+  <a href="https://github.com/AlkaidSTART/call-code"><img src="https://img.shields.io/github/last-commit/AlkaidSTART/call-code?style=flat-square&logo=git&logoColor=white&label=Active&labelColor=141414&color=38bdf8" alt="call-code active"/></a>
 </p>
 
 </div>
@@ -65,6 +75,7 @@
 <br/>
 
 - 主导开发 [**call-code**](https://github.com/AlkaidSTART/call-code) ── 基于 TypeScript + Ink 构建的本地终端编程智能体
+- 开源 [**coderelay**](https://github.com/AlkaidSTART/coderelay) ── 多 Coding Agent 智能路由网关与交互式 TUI，任务自适应调度并接管 TTY 会话
 - 支持自然语言驱动全盘文件读写、上下文长期记忆、自主任务规划与命令执行
 - 打造 [**simple-design**](https://simple-design-zeta.vercel.app) ── 缩短“灵感”到“成品”的设计工具
 </details>
@@ -133,9 +144,23 @@
 
 ### 🔥 代表造物 & 代表作
 
-| 标志 | 项目 | 领域 | 核心亮点 | 链接 |
-|:---:|:---|:---|:---|:---:|
-| 🤖 | **call-code** | AI & CLI Agent | 基于 TypeScript + Ink 的终端编程 Agent，支持自然语言操纵项目文件与长效记忆 | [GitHub](https://github.com/AlkaidSTART/call-code) |
+<!-- GitHub Real-time Pinned Repo Cards API -->
+<div align="center">
+  <a href="https://github.com/AlkaidSTART/call-code">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=AlkaidSTART&repo=call-code&theme=tokyonight&hide_border=true&bg_color=000000&title_color=38bdf8&icon_color=38bdf8&text_color=a1a1aa" alt="call-code pin" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/AlkaidSTART/coderelay">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=AlkaidSTART&repo=coderelay&theme=tokyonight&hide_border=true&bg_color=000000&title_color=f59e0b&icon_color=f59e0b&text_color=a1a1aa" alt="coderelay pin" />
+  </a>
+</div>
+
+<br/>
+
+| 标志 | 项目 | 领域 | 核心亮点 | 实时状态 & 链接 |
+|:---:|:---|:---|:---|:---|
+| 🤖 | **call-code** | AI & CLI Agent | 基于 TypeScript + Ink 的终端编程 Agent，支持自然语言操纵项目文件与长效记忆 | [![Stars](https://img.shields.io/github/stars/AlkaidSTART/call-code?style=flat-square&logo=github&labelColor=18181b&color=38bdf8)](https://github.com/AlkaidSTART/call-code) [![Last Commit](https://img.shields.io/github/last-commit/AlkaidSTART/call-code?style=flat-square&labelColor=18181b&color=34d399)](https://github.com/AlkaidSTART/call-code) |
+| 🔀 | **coderelay** | AI & Agent Router | 多 Coding Agent 智能路由网关与交互式 TUI，根据任务特征分发调度并接管 TTY 会话 | [![Stars](https://img.shields.io/github/stars/AlkaidSTART/coderelay?style=flat-square&logo=github&labelColor=18181b&color=f59e0b)](https://github.com/AlkaidSTART/coderelay) [![Last Commit](https://img.shields.io/github/last-commit/AlkaidSTART/coderelay?style=flat-square&labelColor=18181b&color=34d399)](https://github.com/AlkaidSTART/coderelay) |
 | 🎨 | **simple-design** | Design & SaaS | 设计即成品的轻量设计工具，所见即所得快速出图 | [在线体验](https://simple-design-zeta.vercel.app) |
 | 🪐 | **alkaid.live** | Blog & Knowledge | 个人思考博客，深度沉淀前端底层原理、AI 探索与产品手记 | [进入星系](https://alkaid.live) |
 
@@ -144,6 +169,13 @@
 ### 🛠️ 技术装备库 (Arsenal)
 
 <p align="left">
+  <!-- Languages -->
+  <b>Languages:</b><br/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Golang-00ADD8?style=flat-square&logo=go&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <br/><br/>
   <!-- Frontend -->
   <b>Frontend:</b><br/>
   <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
