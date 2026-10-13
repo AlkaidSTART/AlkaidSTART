@@ -220,12 +220,12 @@
 
 <!-- Live Events Stream (Updated via GitHub Events API & Actions) -->
 <!-- START_SECTION:activity -->
+- 🔨 推送了 0 次提交至 **[GeWu-academy/Modu-AI](https://github.com/GeWu-academy/Modu-AI)**
+- ⭐ Star 收藏了开源项目 **[github/spec-kit](https://github.com/github/spec-kit)**
+- ⭐ Star 收藏了开源项目 **[taicode-labs/clarify](https://github.com/taicode-labs/clarify)**
 - ⭐ Star 收藏了开源项目 **[jgraph/drawio](https://github.com/jgraph/drawio)**
 - ⭐ Star 收藏了开源项目 **[AlkaidSTART/Early-sleep](https://github.com/AlkaidSTART/Early-sleep)**
 - ✨ 创建了分支/标签 `dev` 于 **[AlkaidSTART/Early-sleep](https://github.com/AlkaidSTART/Early-sleep)**
-- ⭐ Star 收藏了开源项目 **[nextroad-dev/AIUsage](https://github.com/nextroad-dev/AIUsage)**
-- 🔨 推送了 0 次提交至 **[AlkaidSTART/backend-how-to-makes-perfect-backend](https://github.com/AlkaidSTART/backend-how-to-makes-perfect-backend)**
-- ⭐ Star 收藏了开源项目 **[GeWu-academy/GeWu-Official-Website](https://github.com/GeWu-academy/GeWu-Official-Website)**
 <!-- END_SECTION:activity -->
 
 <br/>
