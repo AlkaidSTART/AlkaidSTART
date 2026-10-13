@@ -220,12 +220,12 @@
 
 <!-- Live Events Stream (Updated via GitHub Events API & Actions) -->
 <!-- START_SECTION:activity -->
+- ✨ 创建了分支/标签 `main` 于 **[AlkaidSTART/Early-sleep](https://github.com/AlkaidSTART/Early-sleep)**
+- 🔨 推送了 0 次提交至 **[AlkaidSTART/Early-sleep](https://github.com/AlkaidSTART/Early-sleep)**
 - 🔨 推送了 0 次提交至 **[GeWu-academy/Modu-AI](https://github.com/GeWu-academy/Modu-AI)**
 - ⭐ Star 收藏了开源项目 **[github/spec-kit](https://github.com/github/spec-kit)**
 - ⭐ Star 收藏了开源项目 **[taicode-labs/clarify](https://github.com/taicode-labs/clarify)**
 - ⭐ Star 收藏了开源项目 **[jgraph/drawio](https://github.com/jgraph/drawio)**
-- ⭐ Star 收藏了开源项目 **[AlkaidSTART/Early-sleep](https://github.com/AlkaidSTART/Early-sleep)**
-- ✨ 创建了分支/标签 `dev` 于 **[AlkaidSTART/Early-sleep](https://github.com/AlkaidSTART/Early-sleep)**
 <!-- END_SECTION:activity -->
 
 <br/>
