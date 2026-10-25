@@ -22,8 +22,8 @@ jobs:
         with:
           github_user_name: AlkaidSTART
           outputs: |
-            dist/github-contribution-grid-snake.svg?color_snake=#0369a1&color_dots=#ebedf0,#bae6fd,#7dd3fc,#38bdf8,#0284c7
-            dist/github-contribution-grid-snake-dark.svg?color_snake=#7dd3fc&color_dots=#161b22,#0c4a6e,#0284c7,#38bdf8,#bae6fd
+            dist/github-contribution-grid-snake.svg?color_snake=#ea580c&color_dots=#f4f4f5,#fed7aa,#fb923c,#ea580c,#9a3412
+            dist/github-contribution-grid-snake-dark.svg?color_snake=#fb923c&color_dots=#09090b,#431407,#9a3412,#ea580c,#fdba74
 
       - name: Deploy Snake SVG to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0

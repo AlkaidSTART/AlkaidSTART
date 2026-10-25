@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Fetch recent public events for AlkaidSTART from the GitHub REST API
-and update the <!-- START_SECTION:activity --> block in README.md.
+and update the <!-- START_SECTION:activity --> block in README.md
+using an editorial, minimalist log format.
 """
 
 import json
@@ -14,7 +15,8 @@ import urllib.error
 USERNAME = "AlkaidSTART"
 REPO_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 README_PATH = os.path.join(REPO_DIR, "README.md")
-MAX_EVENTS = 6
+MAX_EVENTS = 5
+
 
 def fetch_events():
     url = f"https://api.github.com/users/{USERNAME}/events/public?per_page=30"
@@ -25,7 +27,7 @@ def fetch_events():
     token = os.environ.get("GITHUB_TOKEN")
     if token:
         headers["Authorization"] = f"Bearer {token}"
-        
+
     req = urllib.request.Request(url, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
@@ -36,6 +38,7 @@ def fetch_events():
         print(f"[!] Warning: Failed to fetch events from GitHub API: {e}", file=sys.stderr)
     return None
 
+
 def format_event(event):
     etype = event.get("type")
     repo = event.get("repo", {}).get("name", "")
@@ -43,57 +46,70 @@ def format_event(event):
         return None
     repo_url = f"https://github.com/{repo}"
     repo_link = f"**[{repo}]({repo_url})**"
-    
+    created_at = event.get("created_at", "")
+    date_tag = created_at[:10].replace("-", ".") if len(created_at) >= 10 else "RECENT"
+    payload = event.get("payload", {})
+
     if etype == "PushEvent":
-        commits = event.get("payload", {}).get("commits", [])
-        count = len(commits)
-        msg = commits[0].get("message", "").split("\n")[0] if commits else ""
+        commits = payload.get("commits", [])
+        ref = payload.get("ref", "").replace("refs/heads/", "")
+        msg = commits[0].get("message", "").split("\n")[0].strip() if commits else ""
         if msg:
-            if len(msg) > 50:
-                msg = msg[:47] + "..."
-            return f"- 🔨 推送了 {count} 次提交至 {repo_link} ── *\"{msg}\"*"
-        return f"- 🔨 推送了 {count} 次提交至 {repo_link}"
-    elif etype == "WatchEvent":
-        action = event.get("payload", {}).get("action", "started")
-        if action == "started":
-            return f"- ⭐ Star 收藏了开源项目 {repo_link}"
-    elif etype == "CreateEvent":
-        ref_type = event.get("payload", {}).get("ref_type", "repo")
-        ref = event.get("payload", {}).get("ref")
+            if len(msg) > 48:
+                msg = msg[:45] + "..."
+            return f"- `{date_tag}` · `PUSH` — {repo_link} · *\"{msg}\"*"
         if ref:
-            return f"- ✨ 创建了分支/标签 `{ref}` 于 {repo_link}"
-        return f"- 📦 创建了新仓库 {repo_link}"
+            return f"- `{date_tag}` · `PUSH` — {repo_link} (`{ref}`)"
+        return f"- `{date_tag}` · `PUSH` — {repo_link}"
+
+    elif etype == "WatchEvent":
+        action = payload.get("action", "started")
+        if action == "started":
+            return f"- `{date_tag}` · `STAR` — {repo_link}"
+
+    elif etype == "CreateEvent":
+        ref_type = payload.get("ref_type", "repository")
+        ref = payload.get("ref")
+        if ref:
+            return f"- `{date_tag}` · `CREATE` — {repo_link} (`{ref}`)"
+        return f"- `{date_tag}` · `INIT` — Created {ref_type} {repo_link}"
+
     elif etype == "PullRequestEvent":
-        action = event.get("payload", {}).get("action", "opened")
-        pr = event.get("payload", {}).get("pull_request", {})
+        action = payload.get("action", "opened").upper()
+        pr = payload.get("pull_request", {})
         title = pr.get("title", "")
         pr_num = pr.get("number", "")
         pr_url = pr.get("html_url", repo_url)
-        if len(title) > 40:
-            title = title[:37] + "..."
-        return f"- 🔀 {action.capitalize()} PR [#{pr_num} {title}]({pr_url}) 于 {repo_link}"
+        if len(title) > 42:
+            title = title[:39] + "..."
+        return f"- `{date_tag}` · `PR #{pr_num}` — [{title}]({pr_url}) in {repo_link}"
+
     elif etype == "IssuesEvent":
-        action = event.get("payload", {}).get("action", "opened")
-        issue = event.get("payload", {}).get("issue", {})
+        issue = payload.get("issue", {})
         title = issue.get("title", "")
         issue_num = issue.get("number", "")
         issue_url = issue.get("html_url", repo_url)
-        if len(title) > 40:
-            title = title[:37] + "..."
-        return f"- 💬 {action.capitalize()} Issue [#{issue_num} {title}]({issue_url}) 于 {repo_link}"
+        if len(title) > 42:
+            title = title[:39] + "..."
+        return f"- `{date_tag}` · `ISSUE #{issue_num}` — [{title}]({issue_url}) in {repo_link}"
+
     elif etype == "ReleaseEvent":
-        tag = event.get("payload", {}).get("release", {}).get("tag_name", "")
-        return f"- 🏷️ 带来了新版本发布 `{tag}` 于 {repo_link}"
+        tag = payload.get("release", {}).get("tag_name", "latest")
+        return f"- `{date_tag}` · `RELEASE` — Published `{tag}` in {repo_link}"
+
     elif etype == "ForkEvent":
-        forkee = event.get("payload", {}).get("forkee", {}).get("full_name", "")
-        return f"- 🍴 Fork 了仓库 {repo_link} 到 **[{forkee}](https://github.com/{forkee})**"
+        forkee = payload.get("forkee", {}).get("full_name", "")
+        if forkee:
+            return f"- `{date_tag}` · `FORK` — {repo_link} → **[{forkee}](https://github.com/{forkee})**"
+
     return None
+
 
 def update_readme(items):
     if not os.path.exists(README_PATH):
         print(f"[!] Error: README.md not found at {README_PATH}", file=sys.stderr)
         return False
-        
+
     with open(README_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
@@ -116,6 +132,7 @@ def update_readme(items):
     print(f"[+] Successfully refreshed {len(items)} real-time GitHub activity entries in README.md")
     return True
 
+
 def main():
     events = fetch_events()
     formatted = []
@@ -128,10 +145,11 @@ def main():
                 break
 
     if not formatted:
-        print("[-] No events fetched or API unreachable; using resilient fallback telemetry markers.")
+        print("[-] No events fetched or API unreachable; keeping existing telemetry block.")
         return
 
     update_readme(formatted)
+
 
 if __name__ == "__main__":
     main()

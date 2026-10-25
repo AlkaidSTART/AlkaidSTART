@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 210" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0b0e"/>
+      <stop offset="100%" stop-color="#060608"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="90%" cy="15%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="edge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+    <style>
+      .idx { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 9.5px; font-weight: 600; letter-spacing: 1.8px; fill: #fb923c; }
+      .cat { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 9.5px; letter-spacing: 1.5px; fill: #71717a; }
+      .title { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.6px; fill: #f4f4f5; }
+      .sub { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 10.5px; fill: #a1a1aa; }
+      .desc { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; font-size: 12px; fill: #a1a1aa; }
+      .spec { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 10px; fill: #71717a; }
+      .cta { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 10px; font-weight: 600; letter-spacing: 1px; fill: #e4e4e7; }
+    </style>
+  </defs>
+
+  <rect width="490" height="210" rx="12" fill="url(#bg)"/>
+  <rect width="490" height="210" rx="12" fill="url(#glow)"/>
+  <rect x="0.5" y="0.5" width="489" height="209" rx="11.5" fill="none" stroke="#1f1f23" stroke-width="1"/>
+  <line x1="20" y1="1" x2="470" y2="1" stroke="url(#edge)" stroke-width="1"/>
+
+  <!-- Header -->
+  <text x="26" y="32" class="idx">WORK // 04</text>
+  <text x="104" y="32" class="cat">ENGINEERING PUBLICATIONS</text>
+  <rect x="404" y="18" width="60" height="20" rx="4" fill="#141418" stroke="#27272a" stroke-width="0.8"/>
+  <text x="434" y="31.5" text-anchor="middle" class="cta">BLOG ↗</text>
+
+  <!-- Title & Subtitle -->
+  <text x="26" y="68" class="title">alkaid.live</text>
+  <text x="152" y="67" class="sub">/ Deep-Dive Technical Journal</text>
+
+  <!-- Description -->
+  <text x="26" y="102" class="desc">个人独立技术刊物与知识库。深度拆解 React Fiber 链表与调度源码、</text>
+  <text x="26" y="124" class="desc">异步状态管理架构范式、跨端工程实践与 AI 智能体研发手记。</text>
+
+  <!-- Divider & Specs -->
+  <line x1="26" y1="158" x2="464" y2="158" stroke="#18181b" stroke-width="1"/>
+  <text x="26" y="182" class="spec">Source Code Analysis · System Design · Engineering Notes</text>
+  <circle cx="456" cy="178" r="3" fill="#a1a1aa"/>
+</svg>

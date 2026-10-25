@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 346" width="100%" height="100%">
+  <defs>
+    <linearGradient id="spec-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b"/>
+      <stop offset="100%" stop-color="#050507"/>
+    </linearGradient>
+    <linearGradient id="top-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="80%" stop-color="#fb923c" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+    <style>
+      .sec-idx { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 10px; font-weight: 600; letter-spacing: 2px; fill: #fb923c; }
+      .sec-meta { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 10px; letter-spacing: 1.8px; fill: #52525b; }
+      .row-id { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; fill: #fb923c; }
+      .row-en { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 0.2px; fill: #e4e4e7; }
+      .row-zh { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; font-size: 11.5px; fill: #71717a; }
+      .tag-box { fill: #111115; stroke: #232329; stroke-width: 1; }
+      .tag-box-hi { fill: #1a110b; stroke: #7c2d12; stroke-width: 1; }
+      .tag-txt { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 10.5px; fill: #d4d4d8; }
+      .tag-txt-hi { font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace; font-size: 10.5px; font-weight: 600; fill: #fdba74; }
+    </style>
+  </defs>
+
+  <!-- Section Header -->
+  <g transform="translate(4, 18)">
+    <text x="0" y="0" class="sec-idx">03 // TECHNICAL SPECIFICATION</text>
+    <line x1="226" y1="-4" x2="720" y2="-4" stroke="#18181b" stroke-width="1"/>
+    <text x="992" y="0" text-anchor="end" class="sec-meta">SYSTEM ARCHITECTURE &amp; TOOLING</text>
+  </g>
+
+  <!-- Specification Sheet Frame -->
+  <g transform="translate(0, 36)">
+    <rect width="1000" height="305" rx="12" fill="url(#spec-bg)"/>
+    <rect x="0.5" y="0.5" width="999" height="304" rx="11.5" fill="none" stroke="#1f1f23" stroke-width="1"/>
+    <line x1="24" y1="1" x2="976" y2="1" stroke="url(#top-line)" stroke-width="1"/>
+
+    <!-- Vertical Column Dividers -->
+    <line x1="225" y1="0" x2="225" y2="305" stroke="#18181b" stroke-width="1"/>
+    <line x1="345" y1="0" x2="345" y2="305" stroke="#18181b" stroke-width="1"/>
+
+    <!-- Horizontal Row Dividers -->
+    <line x1="0" y1="61" x2="1000" y2="61" stroke="#18181b" stroke-width="1"/>
+    <line x1="0" y1="122" x2="1000" y2="122" stroke="#18181b" stroke-width="1"/>
+    <line x1="0" y1="183" x2="1000" y2="183" stroke="#18181b" stroke-width="1"/>
+    <line x1="0" y1="244" x2="1000" y2="244" stroke="#18181b" stroke-width="1"/>
+
+    <!-- ROW 01: LANGUAGES & RUNTIMES -->
+    <g transform="translate(0, 0)">
+      <text x="24" y="27" class="row-id">SPEC // 01</text>
+      <text x="24" y="45" class="row-en">Languages &amp; Runtime</text>
+      <text x="245" y="36" class="row-zh">核心语言与运行时</text>
+      <g transform="translate(365, 18)">
+        <rect x="0" y="0" width="84" height="25" rx="4" class="tag-box-hi"/>
+        <text x="42" y="16.5" text-anchor="middle" class="tag-txt-hi">TypeScript</text>
+
+        <rect x="92" y="0" width="84" height="25" rx="4" class="tag-box"/>
+        <text x="134" y="16.5" text-anchor="middle" class="tag-txt">JavaScript</text>
+
+        <rect x="184" y="0" width="66" height="25" rx="4" class="tag-box-hi"/>
+        <text x="217" y="16.5" text-anchor="middle" class="tag-txt-hi">Golang</text>
+
+        <rect x="258" y="0" width="64" height="25" rx="4" class="tag-box"/>
+        <text x="290" y="16.5" text-anchor="middle" class="tag-txt">Python</text>
+
+        <rect x="330" y="0" width="66" height="25" rx="4" class="tag-box"/>
+        <text x="363" y="16.5" text-anchor="middle" class="tag-txt">Node.js</text>
+
+        <rect x="404" y="0" width="52" height="25" rx="4" class="tag-box"/>
+        <text x="430" y="16.5" text-anchor="middle" class="tag-txt">Bun</text>
+      </g>
+    </g>
+
+    <!-- ROW 02: FRONTEND & REACTIVE STATE -->
+    <g transform="translate(0, 61)">
+      <text x="24" y="27" class="row-id">SPEC // 02</text>
+      <text x="24" y="45" class="row-en">Frontend &amp; State</text>
+      <text x="245" y="36" class="row-zh">前端与响应式数据</text>
+      <g transform="translate(365, 18)">
+        <rect x="0" y="0" width="90" height="25" rx="4" class="tag-box-hi"/>
+        <text x="45" y="16.5" text-anchor="middle" class="tag-txt-hi">React Fiber</text>
+
+        <rect x="98" y="0" width="60" height="25" rx="4" class="tag-box"/>
+        <text x="128" y="16.5" text-anchor="middle" class="tag-txt">Vue 3</text>
+
+        <rect x="166" y="0" width="66" height="25" rx="4" class="tag-box"/>
+        <text x="199" y="16.5" text-anchor="middle" class="tag-txt">Next.js</text>
+
+        <rect x="240" y="0" width="106" height="25" rx="4" class="tag-box"/>
+        <text x="293" y="16.5" text-anchor="middle" class="tag-txt">TanStack Query</text>
+
+        <rect x="354" y="0" width="68" height="25" rx="4" class="tag-box"/>
+        <text x="388" y="16.5" text-anchor="middle" class="tag-txt">Zustand</text>
+
+        <rect x="430" y="0" width="76" height="25" rx="4" class="tag-box"/>
+        <text x="468" y="16.5" text-anchor="middle" class="tag-txt">Tailwind</text>
+
+        <rect x="514" y="0" width="52" height="25" rx="4" class="tag-box"/>
+        <text x="540" y="16.5" text-anchor="middle" class="tag-txt">Vite</text>
+      </g>
+    </g>
+
+    <!-- ROW 03: CROSS-PLATFORM & DESKTOP -->
+    <g transform="translate(0, 122)">
+      <text x="24" y="27" class="row-id">SPEC // 03</text>
+      <text x="24" y="45" class="row-en">Cross-Platform</text>
+      <text x="245" y="36" class="row-zh">跨端与桌面端体系</text>
+      <g transform="translate(365, 18)">
+        <rect x="0" y="0" width="68" height="25" rx="4" class="tag-box-hi"/>
+        <text x="34" y="16.5" text-anchor="middle" class="tag-txt-hi">Tauri 2</text>
+
+        <rect x="76" y="0" width="66" height="25" rx="4" class="tag-box-hi"/>
+        <text x="109" y="16.5" text-anchor="middle" class="tag-txt-hi">Flutter</text>
+
+        <rect x="150" y="0" width="72" height="25" rx="4" class="tag-box"/>
+        <text x="186" y="16.5" text-anchor="middle" class="tag-txt">Electron</text>
+
+        <rect x="230" y="0" width="70" height="25" rx="4" class="tag-box"/>
+        <text x="265" y="16.5" text-anchor="middle" class="tag-txt">uni-app</text>
+
+        <rect x="308" y="0" width="72" height="25" rx="4" class="tag-box"/>
+        <text x="344" y="16.5" text-anchor="middle" class="tag-txt">Ink CLI</text>
+
+        <rect x="388" y="0" width="84" height="25" rx="4" class="tag-box"/>
+        <text x="430" y="16.5" text-anchor="middle" class="tag-txt">Turborepo</text>
+
+        <rect x="480" y="0" width="58" height="25" rx="4" class="tag-box"/>
+        <text x="509" y="16.5" text-anchor="middle" class="tag-txt">pnpm</text>
+      </g>
+    </g>
+
+    <!-- ROW 04: BACKEND & PERSISTENCE -->
+    <g transform="translate(0, 183)">
+      <text x="24" y="27" class="row-id">SPEC // 04</text>
+      <text x="24" y="45" class="row-en">Backend &amp; Storage</text>
+      <text x="245" y="36" class="row-zh">高并发后端与存储</text>
+      <g transform="translate(365, 18)">
+        <rect x="0" y="0" width="72" height="25" rx="4" class="tag-box-hi"/>
+        <text x="36" y="16.5" text-anchor="middle" class="tag-txt-hi">Go / Gin</text>
+
+        <rect x="80" y="0" width="70" height="25" rx="4" class="tag-box-hi"/>
+        <text x="115" y="16.5" text-anchor="middle" class="tag-txt-hi">FastAPI</text>
+
+        <rect x="158" y="0" width="88" height="25" rx="4" class="tag-box"/>
+        <text x="202" y="16.5" text-anchor="middle" class="tag-txt">PostgreSQL</text>
+
+        <rect x="254" y="0" width="56" height="25" rx="4" class="tag-box"/>
+        <text x="282" y="16.5" text-anchor="middle" class="tag-txt">Redis</text>
+
+        <rect x="318" y="0" width="60" height="25" rx="4" class="tag-box"/>
+        <text x="348" y="16.5" text-anchor="middle" class="tag-txt">MySQL</text>
+
+        <rect x="386" y="0" width="76" height="25" rx="4" class="tag-box"/>
+        <text x="424" y="16.5" text-anchor="middle" class="tag-txt">MongoDB</text>
+
+        <rect x="470" y="0" width="64" height="25" rx="4" class="tag-box"/>
+        <text x="502" y="16.5" text-anchor="middle" class="tag-txt">Prisma</text>
+
+        <rect x="542" y="0" width="74" height="25" rx="4" class="tag-box"/>
+        <text x="579" y="16.5" text-anchor="middle" class="tag-txt">Supabase</text>
+      </g>
+    </g>
+
+    <!-- ROW 05: AI AGENT INFRA & CLOUD -->
+    <g transform="translate(0, 244)">
+      <text x="24" y="27" class="row-id">SPEC // 05</text>
+      <text x="24" y="45" class="row-en">AI &amp; Cloud Infra</text>
+      <text x="245" y="36" class="row-zh">智能体编排与基建</text>
+      <g transform="translate(365, 18)">
+        <rect x="0" y="0" width="84" height="25" rx="4" class="tag-box-hi"/>
+        <text x="42" y="16.5" text-anchor="middle" class="tag-txt-hi">LangGraph</text>
+
+        <rect x="92" y="0" width="82" height="25" rx="4" class="tag-box"/>
+        <text x="133" y="16.5" text-anchor="middle" class="tag-txt">LangChain</text>
+
+        <rect x="182" y="0" width="92" height="25" rx="4" class="tag-box"/>
+        <text x="228" y="16.5" text-anchor="middle" class="tag-txt">Claude Code</text>
+
+        <rect x="282" y="0" width="62" height="25" rx="4" class="tag-box"/>
+        <text x="313" y="16.5" text-anchor="middle" class="tag-txt">Codex</text>
+
+        <rect x="352" y="0" width="88" height="25" rx="4" class="tag-box"/>
+        <text x="396" y="16.5" text-anchor="middle" class="tag-txt">Antigravity</text>
+
+        <rect x="448" y="0" width="82" height="25" rx="4" class="tag-box"/>
+        <text x="489" y="16.5" text-anchor="middle" class="tag-txt">Cloudflare</text>
+
+        <rect x="538" y="0" width="62" height="25" rx="4" class="tag-box"/>
+        <text x="569" y="16.5" text-anchor="middle" class="tag-txt">Vercel</text>
+      </g>
+    </g>
+  </g>
+</svg>

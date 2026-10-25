@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" width="100%" height="100%">
+  <defs>
+    <!-- Card Surface Gradient -->
+    <linearGradient id="card-surface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d10"/>
+      <stop offset="100%" stop-color="#070709"/>
+    </linearGradient>
+
+    <!-- Primary Spotlight Card Surface (Pillar 01 & 02 Warm Rim) -->
+    <radialGradient id="amber-corner" cx="92%" cy="12%" r="55%">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.11"/>
+      <stop offset="50%" stop-color="#9a3412" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Top Specular Highlight for Cards -->
+    <linearGradient id="card-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="75%" stop-color="#fb923c" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+
+    <style>
+      .sec-idx {
+        font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', Menlo, monospace;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        fill: #fb923c;
+      }
+      .sec-meta {
+        font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', Menlo, monospace;
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        fill: #52525b;
+      }
+      .card-num {
+        font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        fill: #fb923c;
+      }
+      .card-domain {
+        font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+        font-size: 9.5px;
+        letter-spacing: 1.4px;
+        fill: #71717a;
+      }
+      .card-title-en {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        fill: #f4f4f5;
+      }
+      .card-title-zh {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        fill: #a1a1aa;
+      }
+      .bullet-text {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        font-size: 12px;
+        fill: #a1a1aa;
+      }
+      .bullet-em {
+        fill: #e4e4e7;
+        font-weight: 600;
+      }
+      .pill-bg {
+        fill: #121216;
+        stroke: #27272a;
+        stroke-width: 1;
+      }
+      .pill-bg-accent {
+        fill: #1c120c;
+        stroke: #7c2d12;
+        stroke-width: 1;
+      }
+      .pill-text {
+        font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+        font-size: 10px;
+        fill: #d4d4d8;
+      }
+      .pill-text-accent {
+        font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+        font-size: 10px;
+        font-weight: 600;
+        fill: #fdba74;
+      }
+    </style>
+  </defs>
+
+  <!-- Section Header Bar -->
+  <g transform="translate(4, 18)">
+    <text x="0" y="0" class="sec-idx">01 // ARCHITECTURAL ADVANTAGE</text>
+    <line x1="230" y1="-4" x2="720" y2="-4" stroke="#18181b" stroke-width="1"/>
+    <text x="992" y="0" text-anchor="end" class="sec-meta">CORE COMPETENCIES · 4 DIMENSIONS</text>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- CARD 01: FRONTEND INTERNALS & REACTIVE ARCHITECTURE (Top Left)          -->
+  <!-- ======================================================================= -->
+  <g transform="translate(0, 36)">
+    <rect width="490" height="240" rx="12" fill="url(#card-surface)"/>
+    <rect width="490" height="240" rx="12" fill="url(#amber-corner)"/>
+    <rect x="0.5" y="0.5" width="489" height="239" rx="11.5" fill="none" stroke="#1f1f23" stroke-width="1"/>
+    <line x1="20" y1="1" x2="470" y2="1" stroke="url(#card-edge)" stroke-width="1"/>
+
+    <!-- Top Metadata & Schematic Icon (Fiber Tree / Lane Scheduler) -->
+    <text x="28" y="34" class="card-num">01 / 04</text>
+    <text x="84" y="34" class="card-domain">FRONTEND INTERNALS &amp; DATAFLOW</text>
+    <g transform="translate(418, 20)" stroke="#fb923c" stroke-width="1.2" fill="none" opacity="0.8">
+      <circle cx="12" cy="8" r="3.5" fill="#fb923c" fill-opacity="0.25"/>
+      <circle cx="4" cy="24" r="3"/>
+      <circle cx="22" cy="24" r="3"/>
+      <circle cx="38" cy="14" r="3"/>
+      <path d="M12 11.5 L5 21 M12 11.5 L21 21 M25 24 H35 L38 17" stroke-opacity="0.65"/>
+    </g>
+
+    <!-- Titles -->
+    <text x="28" y="68" class="card-title-en">Frontend Engine &amp; Reactive State</text>
+    <text x="28" y="90" class="card-title-zh">前端双核底层机理与确定性数据流架构</text>
+    <line x1="28" y1="104" x2="462" y2="104" stroke="#18181b" stroke-width="1"/>
+
+    <!-- Engineering Depth Points -->
+    <g transform="translate(28, 128)">
+      <circle cx="4" cy="-4" r="2" fill="#f97316"/>
+      <text x="14" y="0" class="bullet-text"><tspan class="bullet-em">源码级深度</tspan>：精研 React Fiber 调度、Hooks 链表模型与 Vue 3 响应式依赖追踪</text>
+
+      <circle cx="4" cy="20" r="2" fill="#71717a"/>
+      <text x="14" y="24" class="bullet-text"><tspan class="bullet-em">异步状态血脉</tspan>：以 TanStack Query + Zustand 构建零冗余请求、乐观更新的数据层</text>
+
+      <circle cx="4" cy="44" r="2" fill="#71717a"/>
+      <text x="14" y="48" class="bullet-text"><tspan class="bullet-em">现代工程体系</tspan>：Next.js SSR/RSC、Vite 与 Turborepo 大型单仓构建及极致组件抽象</text>
+    </g>
+
+    <!-- Bottom Spec Capsules -->
+    <g transform="translate(28, 198)">
+      <rect x="0" y="0" width="84" height="22" rx="4" class="pill-bg-accent"/>
+      <text x="42" y="14.5" text-anchor="middle" class="pill-text-accent">React Fiber</text>
+
+      <rect x="92" y="0" width="58" height="22" rx="4" class="pill-bg"/>
+      <text x="121" y="14.5" text-anchor="middle" class="pill-text">Vue 3</text>
+
+      <rect x="158" y="0" width="78" height="22" rx="4" class="pill-bg"/>
+      <text x="197" y="14.5" text-anchor="middle" class="pill-text">TypeScript</text>
+
+      <rect x="244" y="0" width="102" height="22" rx="4" class="pill-bg"/>
+      <text x="295" y="14.5" text-anchor="middle" class="pill-text">TanStack Query</text>
+
+      <rect x="354" y="0" width="66" height="22" rx="4" class="pill-bg"/>
+      <text x="387" y="14.5" text-anchor="middle" class="pill-text">Zustand</text>
+    </g>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- CARD 02: CROSS-PLATFORM & DESKTOP SYSTEMS (Top Right)                   -->
+  <!-- ======================================================================= -->
+  <g transform="translate(510, 36)">
+    <rect width="490" height="240" rx="12" fill="url(#card-surface)"/>
+    <rect width="490" height="240" rx="12" fill="url(#amber-corner)"/>
+    <rect x="0.5" y="0.5" width="489" height="239" rx="11.5" fill="none" stroke="#1f1f23" stroke-width="1"/>
+    <line x1="20" y1="1" x2="470" y2="1" stroke="url(#card-edge)" stroke-width="1"/>
+
+    <!-- Top Metadata & Schematic Icon (Multi-Surface Viewport) -->
+    <text x="28" y="34" class="card-num">02 / 04</text>
+    <text x="84" y="34" class="card-domain">CROSS-PLATFORM &amp; NATIVE DESKTOP</text>
+    <g transform="translate(416, 18)" stroke="#fb923c" stroke-width="1.2" fill="none" opacity="0.8">
+      <rect x="0" y="4" width="32" height="20" rx="2.5"/>
+      <rect x="24" y="10" width="16" height="20" rx="2" fill="#0d0d10"/>
+      <line x1="8" y1="28" x2="20" y2="28" stroke-opacity="0.6"/>
+    </g>
+
+    <!-- Titles -->
+    <text x="28" y="68" class="card-title-en">Multi-Platform &amp; Desktop Delivery</text>
+    <text x="28" y="90" class="card-title-zh">桌面端、移动端与跨平台全链路工程化交付</text>
+    <line x1="28" y1="104" x2="462" y2="104" stroke="#18181b" stroke-width="1"/>
+
+    <!-- Engineering Depth Points -->
+    <g transform="translate(28, 128)">
+      <circle cx="4" cy="-4" r="2" fill="#f97316"/>
+      <text x="14" y="0" class="bullet-text"><tspan class="bullet-em">轻量原生桌面端</tspan>：基于 Tauri 2 与 Electron 构建低内存占用、系统级交互的桌面应用</text>
+
+      <circle cx="4" cy="20" r="2" fill="#71717a"/>
+      <text x="14" y="24" class="bullet-text"><tspan class="bullet-em">多端一致性渲染</tspan>：熟练运用 Flutter 自绘引擎与 uni-app 实现跨 iOS/Android/小程序交付</text>
+
+      <circle cx="4" cy="44" r="2" fill="#71717a"/>
+      <text x="14" y="48" class="bullet-text"><tspan class="bullet-em">终端 TUI 交互层</tspan>：精通 Ink + Node/Bun 打造高响应度 CLI 界面与 TTY 伪终端会话接管</text>
+    </g>
+
+    <!-- Bottom Spec Capsules -->
+    <g transform="translate(28, 198)">
+      <rect x="0" y="0" width="66" height="22" rx="4" class="pill-bg-accent"/>
+      <text x="33" y="14.5" text-anchor="middle" class="pill-text-accent">Tauri 2</text>
+
+      <rect x="74" y="0" width="64" height="22" rx="4" class="pill-bg"/>
+      <text x="106" y="14.5" text-anchor="middle" class="pill-text">Flutter</text>
+
+      <rect x="146" y="0" width="68" height="22" rx="4" class="pill-bg"/>
+      <text x="180" y="14.5" text-anchor="middle" class="pill-text">Electron</text>
+
+      <rect x="222" y="0" width="68" height="22" rx="4" class="pill-bg"/>
+      <text x="256" y="14.5" text-anchor="middle" class="pill-text">uni-app</text>
+
+      <rect x="298" y="0" width="66" height="22" rx="4" class="pill-bg"/>
+      <text x="331" y="14.5" text-anchor="middle" class="pill-text">Ink TUI</text>
+
+      <rect x="372" y="0" width="54" height="22" rx="4" class="pill-bg"/>
+      <text x="399" y="14.5" text-anchor="middle" class="pill-text">Bun</text>
+    </g>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- CARD 03: HIGH-CONCURRENCY BACKEND & DATA INFRA (Bottom Left)            -->
+  <!-- ======================================================================= -->
+  <g transform="translate(0, 294)">
+    <rect width="490" height="240" rx="12" fill="url(#card-surface)"/>
+    <rect width="490" height="240" rx="12" fill="url(#amber-corner)"/>
+    <rect x="0.5" y="0.5" width="489" height="239" rx="11.5" fill="none" stroke="#1f1f23" stroke-width="1"/>
+    <line x1="20" y1="1" x2="470" y2="1" stroke="url(#card-edge)" stroke-width="1"/>
+
+    <!-- Top Metadata & Schematic Icon (Distributed Server / Storage Stack) -->
+    <text x="28" y="34" class="card-num">03 / 04</text>
+    <text x="84" y="34" class="card-domain">DISTRIBUTED BACKEND &amp; PERSISTENCE</text>
+    <g transform="translate(418, 18)" stroke="#fb923c" stroke-width="1.2" fill="none" opacity="0.8">
+      <rect x="2" y="4" width="36" height="7" rx="1.5"/>
+      <rect x="2" y="14" width="36" height="7" rx="1.5"/>
+      <rect x="2" y="24" width="36" height="7" rx="1.5"/>
+      <circle cx="8" cy="7.5" r="1" fill="#fb923c"/>
+      <circle cx="8" cy="17.5" r="1" fill="#fb923c"/>
+      <circle cx="8" cy="27.5" r="1" fill="#fb923c"/>
+    </g>
+
+    <!-- Titles -->
+    <text x="28" y="68" class="card-title-en">High-Concurrency Backend &amp; Data</text>
+    <text x="28" y="90" class="card-title-zh">Go 微服务、Python 异步网关与多模态存储中枢</text>
+    <line x1="28" y1="104" x2="462" y2="104" stroke="#18181b" stroke-width="1"/>
+
+    <!-- Engineering Depth Points -->
+    <g transform="translate(28, 128)">
+      <circle cx="4" cy="-4" r="2" fill="#f97316"/>
+      <text x="14" y="0" class="bullet-text"><tspan class="bullet-em">高吞吐网络服务</tspan>：使用 Go + Gin 构建低延迟并发微服务，兼顾内存效率与高吞吐</text>
+
+      <circle cx="4" cy="20" r="2" fill="#71717a"/>
+      <text x="14" y="24" class="bullet-text"><tspan class="bullet-em">异步 AI 后端底座</tspan>：Python + FastAPI 构筑高性能异步接口，无缝衔接大模型与数据流</text>
+
+      <circle cx="4" cy="44" r="2" fill="#71717a"/>
+      <text x="14" y="48" class="bullet-text"><tspan class="bullet-em">现代持久化架构</tspan>：PostgreSQL / MySQL / Redis / MongoDB 协同 Prisma 与 Supabase</text>
+    </g>
+
+    <!-- Bottom Spec Capsules -->
+    <g transform="translate(28, 198)">
+      <rect x="0" y="0" width="68" height="22" rx="4" class="pill-bg-accent"/>
+      <text x="34" y="14.5" text-anchor="middle" class="pill-text-accent">Go / Gin</text>
+
+      <rect x="76" y="0" width="68" height="22" rx="4" class="pill-bg"/>
+      <text x="110" y="14.5" text-anchor="middle" class="pill-text">FastAPI</text>
+
+      <rect x="152" y="0" width="84" height="22" rx="4" class="pill-bg"/>
+      <text x="194" y="14.5" text-anchor="middle" class="pill-text">PostgreSQL</text>
+
+      <rect x="244" y="0" width="54" height="22" rx="4" class="pill-bg"/>
+      <text x="271" y="14.5" text-anchor="middle" class="pill-text">Redis</text>
+
+      <rect x="306" y="0" width="60" height="22" rx="4" class="pill-bg"/>
+      <text x="336" y="14.5" text-anchor="middle" class="pill-text">Prisma</text>
+
+      <rect x="374" y="0" width="72" height="22" rx="4" class="pill-bg"/>
+      <text x="410" y="14.5" text-anchor="middle" class="pill-text">Supabase</text>
+    </g>
+  </g>
+
+  <!-- ======================================================================= -->
+  <!-- CARD 04: AI AGENT ORCHESTRATION & PRODUCT MATRIX (Bottom Right)         -->
+  <!-- ======================================================================= -->
+  <g transform="translate(510, 294)">
+    <rect width="490" height="240" rx="12" fill="url(#card-surface)"/>
+    <rect width="490" height="240" rx="12" fill="url(#amber-corner)"/>
+    <rect x="0.5" y="0.5" width="489" height="239" rx="11.5" fill="none" stroke="#1f1f23" stroke-width="1"/>
+    <line x1="20" y1="1" x2="470" y2="1" stroke="url(#card-edge)" stroke-width="1"/>
+
+    <!-- Top Metadata & Schematic Icon (Directed Cyclic Agent State Graph) -->
+    <text x="28" y="34" class="card-num">04 / 04</text>
+    <text x="84" y="34" class="card-domain">AI AGENT INFRA &amp; PRODUCT CRAFT</text>
+    <g transform="translate(418, 18)" stroke="#fb923c" stroke-width="1.2" fill="none" opacity="0.8">
+      <polygon points="20,4 36,13 36,27 20,34 4,27 4,13" stroke-opacity="0.75"/>
+      <circle cx="20" cy="19" r="4" fill="#fb923c" fill-opacity="0.3"/>
+    </g>
+
+    <!-- Titles -->
+    <text x="28" y="68" class="card-title-en">Agent Orchestration &amp; Tooling</text>
+    <text x="28" y="90" class="card-title-zh">多智能体状态机编排、终端路由网关与独立造物</text>
+    <line x1="28" y1="104" x2="462" y2="104" stroke="#18181b" stroke-width="1"/>
+
+    <!-- Engineering Depth Points -->
+    <g transform="translate(28, 128)">
+      <circle cx="4" cy="-4" r="2" fill="#f97316"/>
+      <text x="14" y="0" class="bullet-text"><tspan class="bullet-em">有向图状态机编排</tspan>：基于 LangGraph &amp; LangChain 构建循环反思、人机回环生产级 Agent</text>
+
+      <circle cx="4" cy="20" r="2" fill="#71717a"/>
+      <text x="14" y="24" class="bullet-text"><tspan class="bullet-em">CLI 智能体与路由</tspan>：自研 call-code 编程智能体与 coderelay 多 Agent 自适应调度网关</text>
+
+      <circle cx="4" cy="44" r="2" fill="#71717a"/>
+      <text x="14" y="48" class="bullet-text"><tspan class="bullet-em">全链路产品闭环</tspan>：打通 Claude Code / Codex / Antigravity 生态，从架构设计到上线交付</text>
+    </g>
+
+    <!-- Bottom Spec Capsules -->
+    <g transform="translate(28, 198)">
+      <rect x="0" y="0" width="82" height="22" rx="4" class="pill-bg-accent"/>
+      <text x="41" y="14.5" text-anchor="middle" class="pill-text-accent">LangGraph</text>
+
+      <rect x="90" y="0" width="76" height="22" rx="4" class="pill-bg"/>
+      <text x="128" y="14.5" text-anchor="middle" class="pill-text">LangChain</text>
+
+      <rect x="174" y="0" width="74" height="22" rx="4" class="pill-bg"/>
+      <text x="211" y="14.5" text-anchor="middle" class="pill-text">call-code</text>
+
+      <rect x="256" y="0" width="76" height="22" rx="4" class="pill-bg"/>
+      <text x="294" y="14.5" text-anchor="middle" class="pill-text">coderelay</text>
+
+      <rect x="340" y="0" width="92" height="22" rx="4" class="pill-bg"/>
+      <text x="386" y="14.5" text-anchor="middle" class="pill-text">Multi-Agent</text>
+    </g>
+  </g>
+</svg>
