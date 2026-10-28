@@ -75,11 +75,11 @@
 **Recent Activity**
 
 <!-- START_SECTION:activity -->
+- `2026.10.28` · `PUSH` — **[AlkaidSTART/booklin](https://github.com/AlkaidSTART/booklin)** (`main`)
 - `2026.10.27` · `PUSH` — **[AlkaidSTART/booklin](https://github.com/AlkaidSTART/booklin)** (`main`)
 - `2026.10.28` · `STAR` — **[AlkaidSTART/booklin](https://github.com/AlkaidSTART/booklin)**
 - `2026.10.26` · `PUSH` — **[AlkaidSTART/booklin](https://github.com/AlkaidSTART/booklin)** (`main`)
 - `2026.10.26` · `CREATE` — **[AlkaidSTART/booklin](https://github.com/AlkaidSTART/booklin)** (`main`)
-- `2026.10.26` · `STAR` — **[earendil-works/pi](https://github.com/earendil-works/pi)**
 <!-- END_SECTION:activity -->
 
 </td>
