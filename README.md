@@ -75,11 +75,11 @@
 **Recent Activity**
 
 <!-- START_SECTION:activity -->
+- `2026.11.02` · `FORK` — **[minorcell/spider](https://github.com/minorcell/spider)** → **[AlkaidSTART/spider](https://github.com/AlkaidSTART/spider)**
 - `2026.11.01` · `STAR` — **[minorcell/spider](https://github.com/minorcell/spider)**
 - `2026.10.30` · `PUSH` — **[AlkaidSTART/booklin](https://github.com/AlkaidSTART/booklin)** (`main`)
 - `2026.11.01` · `STAR` — **[deepseek-ai/dsh-superagent-prototype](https://github.com/deepseek-ai/dsh-superagent-prototype)**
 - `2026.10.30` · `PUSH` — **[AlkaidSTART/TimePulse](https://github.com/AlkaidSTART/TimePulse)** (`main`)
-- `2026.10.30` · `PUSH` — **[AlkaidSTART/TimePulse](https://github.com/AlkaidSTART/TimePulse)** (`dev-alkaidstart`)
 <!-- END_SECTION:activity -->
 
 </td>
