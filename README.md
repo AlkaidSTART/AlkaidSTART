@@ -75,11 +75,11 @@
 **Recent Activity**
 
 <!-- START_SECTION:activity -->
+- `2026.11.09` · `PUSH` — **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)** (`main`)
 - `2026.11.08` · `PUSH` — **[AlkaidSTART/excalidraw](https://github.com/AlkaidSTART/excalidraw)** (`master`)
 - `2026.11.09` · `STAR` — **[github/spec-kit](https://github.com/github/spec-kit)**
 - `2026.11.09` · `PUSH` — **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)** (`dev`)
 - `2026.11.09` · `PR #101` — [](https://github.com/GeWu-academy/coderelay) in **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)**
-- `2026.11.08` · `STAR` — **[0xquinto/bcherny-claude](https://github.com/0xquinto/bcherny-claude)**
 <!-- END_SECTION:activity -->
 
 </td>
