@@ -75,11 +75,11 @@
 **Recent Activity**
 
 <!-- START_SECTION:activity -->
+- `2026.11.17` · `STAR` — **[KettuAI/Kettu](https://github.com/KettuAI/Kettu)**
 - `2026.11.16` · `PUSH` — **[AlkaidSTART/NightHouse](https://github.com/AlkaidSTART/NightHouse)** (`main`)
 - `2026.11.16` · `STAR` — **[phosphor-icons/react](https://github.com/phosphor-icons/react)**
 - `2026.11.13` · `PUSH` — **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)** (`main`)
 - `2026.11.12` · `PUSH` — **[AlkaidSTART/NightHouse](https://github.com/AlkaidSTART/NightHouse)** (`main`)
-- `2026.11.13` · `STAR` — **[GeWu-academy/lianqianyan](https://github.com/GeWu-academy/lianqianyan)**
 <!-- END_SECTION:activity -->
 
 </td>
