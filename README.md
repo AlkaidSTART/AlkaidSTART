@@ -75,11 +75,11 @@
 **Recent Activity**
 
 <!-- START_SECTION:activity -->
-- `2026.11.17` · `STAR` — **[KettuAI/Kettu](https://github.com/KettuAI/Kettu)**
-- `2026.11.16` · `PUSH` — **[AlkaidSTART/NightHouse](https://github.com/AlkaidSTART/NightHouse)** (`main`)
-- `2026.11.16` · `STAR` — **[phosphor-icons/react](https://github.com/phosphor-icons/react)**
-- `2026.11.13` · `PUSH` — **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)** (`main`)
-- `2026.11.12` · `PUSH` — **[AlkaidSTART/NightHouse](https://github.com/AlkaidSTART/NightHouse)** (`main`)
+- `2026.11.18` · `ISSUE #1875` — [文字大小预览容易被误认为对话内容](https://github.com/KettuAI/Kettu/issues/1875) in **[KettuAI/Kettu](https://github.com/KettuAI/Kettu)**
+- `2026.11.18` · `ISSUE #1874` — [Text size preview reads as leaked conve...](https://github.com/KettuAI/Kettu/issues/1874) in **[KettuAI/Kettu](https://github.com/KettuAI/Kettu)**
+- `2026.11.18` · `FORK` — **[KettuAI/Kettu](https://github.com/KettuAI/Kettu)** → **[AlkaidSTART/Kettu](https://github.com/AlkaidSTART/Kettu)**
+- `2026.11.18` · `PR #102` — [](https://github.com/GeWu-academy/coderelay) in **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)**
+- `2026.11.18` · `STAR` — **[zeromicro/go-zero](https://github.com/zeromicro/go-zero)**
 <!-- END_SECTION:activity -->
 
 </td>
