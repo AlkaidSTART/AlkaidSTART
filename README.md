@@ -75,11 +75,11 @@
 **Recent Activity**
 
 <!-- START_SECTION:activity -->
+- `2026.11.18` · `PUSH` — **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)** (`dev`)
 - `2026.11.18` · `CREATE` — **[AlkaidSTART/Kettu](https://github.com/AlkaidSTART/Kettu)** (`docs/1875-issue-screenshots`)
 - `2026.11.19` · `STAR` — **[stablyai/orca](https://github.com/stablyai/orca)**
 - `2026.11.18` · `ISSUE #1875` — [文字大小预览容易被误认为对话内容](https://github.com/KettuAI/Kettu/issues/1875) in **[KettuAI/Kettu](https://github.com/KettuAI/Kettu)**
 - `2026.11.18` · `ISSUE #1874` — [Text size preview reads as leaked conve...](https://github.com/KettuAI/Kettu/issues/1874) in **[KettuAI/Kettu](https://github.com/KettuAI/Kettu)**
-- `2026.11.18` · `FORK` — **[KettuAI/Kettu](https://github.com/KettuAI/Kettu)** → **[AlkaidSTART/Kettu](https://github.com/AlkaidSTART/Kettu)**
 <!-- END_SECTION:activity -->
 
 </td>
