@@ -75,11 +75,11 @@
 **Recent Activity**
 
 <!-- START_SECTION:activity -->
+- `2026.11.21` · `PUSH` — **[AlkaidSTART/Elonga](https://github.com/AlkaidSTART/Elonga)** (`main`)
+- `2026.11.21` · `PUSH` — **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)** (`dev`)
 - `2026.11.22` · `PUSH` — **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)** (`dev`)
 - `2026.11.22` · `PR #109` — [](https://github.com/GeWu-academy/coderelay) in **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)**
 - `2026.11.22` · `PR #108` — [](https://github.com/GeWu-academy/coderelay) in **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)**
-- `2026.11.22` · `ISSUE #23` — [fix(session): native session ID 无法从 age...](https://github.com/GeWu-academy/coderelay/issues/23) in **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)**
-- `2026.11.22` · `ISSUE #45` — [fix(jev): 路由请求会丢弃 files/language/contex...](https://github.com/GeWu-academy/coderelay/issues/45) in **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)**
 <!-- END_SECTION:activity -->
 
 </td>
