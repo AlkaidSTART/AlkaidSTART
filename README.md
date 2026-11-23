@@ -77,9 +77,9 @@
 <!-- START_SECTION:activity -->
 - `2026.11.21` · `PUSH` — **[AlkaidSTART/Elonga](https://github.com/AlkaidSTART/Elonga)** (`main`)
 - `2026.11.21` · `PUSH` — **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)** (`dev`)
+- `2026.11.22` · `PUSH` — **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)** (`main`)
 - `2026.11.22` · `PUSH` — **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)** (`dev`)
-- `2026.11.22` · `PR #109` — [](https://github.com/GeWu-academy/coderelay) in **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)**
-- `2026.11.22` · `PR #108` — [](https://github.com/GeWu-academy/coderelay) in **[GeWu-academy/coderelay](https://github.com/GeWu-academy/coderelay)**
+- `2026.11.22` · `PUSH` — **[AlkaidSTART/SciCanvas](https://github.com/AlkaidSTART/SciCanvas)** (`main`)
 <!-- END_SECTION:activity -->
 
 </td>
