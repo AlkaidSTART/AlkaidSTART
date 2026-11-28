@@ -49,6 +49,18 @@ THEMES: dict[str, dict[str, Any]] = {
         "scan_op": "0.10",
         "heat": ["#16161B", "#35353F", "#656573", "#A4A4B0", "#FAFAFA"],
         "langs": ["#FAFAFA", "#BEBEC8", "#8C8C98", "#646470", "#494954", "#363640", "#292932", "#1E1E25"],
+        "plinth": ("#111116", "#0D0D11", "#08080B", "#24242C"),
+        "blocks": [
+            ("#18181F", "#131319", "#0E0E13"),
+            ("#3A3A45", "#2B2B34", "#1F1F27"),
+            ("#6A6A78", "#50505C", "#3A3A44"),
+            ("#B2B2C0", "#8B8B99", "#666673"),
+            ("#FAFAFA", "#D4D4DC", "#9E9EAA"),
+        ],
+        "block_seam": "#09090B",
+        "block_seam_op": "0.46",
+        "stud_rim": "#FFFFFF",
+        "stud_rim_op": "0.18",
     },
     "light": {
         "bg": "#FAFAFA",
@@ -71,6 +83,18 @@ THEMES: dict[str, dict[str, Any]] = {
         "scan_op": "0.065",
         "heat": ["#EFEFF2", "#D3D3DB", "#9A9AA6", "#54545F", "#09090B"],
         "langs": ["#09090B", "#3F3F47", "#63636E", "#8A8A96", "#A7A7B3", "#C2C2CC", "#D8D8E0", "#E8E8EE"],
+        "plinth": ("#F2F2F6", "#E5E5EC", "#D8D8E2", "#D4D4DE"),
+        "blocks": [
+            ("#EAEAEF", "#DFDFE6", "#D4D4DC"),
+            ("#C7C7D2", "#AFAFBC", "#9696A4"),
+            ("#8D8D9B", "#737381", "#5B5B69"),
+            ("#50505C", "#3B3B45", "#282831"),
+            ("#1A1A20", "#101014", "#060608"),
+        ],
+        "block_seam": "#FAFAFA",
+        "block_seam_op": "0.34",
+        "stud_rim": "#FFFFFF",
+        "stud_rim_op": "0.35",
     },
 }
 
@@ -1214,6 +1238,446 @@ def build_telemetry(theme_name: str, cfg: dict[str, Any], telemetry: dict[str, A
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# 5B. 3D ISOMETRIC CONTRIBUTION BLOCKS — Modular Stacked Voxel Heatmap
+# ─────────────────────────────────────────────────────────────────────────────
+def build_blocks(theme_name: str, cfg: dict[str, Any], telemetry: dict[str, Any]) -> str:
+    t = THEMES[theme_name]
+    W, H = 1000, 434
+    stage_top, stage_bot = 38.0, 378.0
+
+    yr_contrib = telemetry.get("yearlyContributions", 2816)
+    contrib_days: list[dict[str, Any]] = telemetry.get("contributionDays", [])
+    if len(contrib_days) < 350:
+        rng = random.Random(20261128)
+        contrib_days = []
+        base_d = dt.date(2025, 11, 23)
+        for d_i in range(371):
+            dd = base_d + dt.timedelta(days=d_i)
+            lv = rng.choices([0, 1, 2, 3, 4], weights=[45, 25, 16, 9, 5])[0]
+            contrib_days.append({"date": dd.isoformat(), "level": lv, "count": lv * 14})
+
+    cells = contrib_days[-371:]
+    cols = (len(cells) + 6) // 7
+    rows = 7
+
+    counts = [int(d.get("count", 0)) for d in cells]
+    max_count = max(counts) if counts else 1
+    scale_max = max(max_count, 16)
+    active_days = sum(1 for c in counts if c > 0)
+    avg_active = (sum(counts) / active_days) if active_days else 0.0
+
+    # Trimetric / architectural axonometric projection tailored for 53x7 aspect ratio
+    yaw = math.radians(20.0)
+    pitch = math.radians(34.0)
+    step = 16.0
+    ec_x = step * math.cos(yaw)
+    ec_y = step * math.sin(yaw) * math.sin(pitch)
+    er_x = -step * math.sin(yaw)
+    er_y = step * math.cos(yaw) * math.sin(pitch)
+
+    # Center the 53x7 baseplate horizontally inside W=1000
+    min_bx = rows * er_x
+    max_bx = cols * ec_x
+    origin_x = (W - (max_bx - min_bx)) / 2.0 - min_bx
+    origin_y = 120.0
+
+    def proj(fc: float, fr: float, fz: float = 0.0) -> tuple[float, float]:
+        return (
+            origin_x + fc * ec_x + fr * er_x,
+            origin_y + fc * ec_y + fr * er_y - fz,
+        )
+
+    # Compute discrete stacked-brick count & visual tier per cell
+    brick_h = 7.4
+    max_bricks = 11
+    cell_specs: list[dict[str, Any]] = []
+    total_bricks = 0
+    for idx, day in enumerate(cells):
+        c = idx // 7
+        r = idx % 7
+        cnt = int(day.get("count", 0))
+        lv = max(0, min(4, int(day.get("level", 0))))
+        if cnt <= 0 and lv == 0:
+            bricks = 0
+            tier = 0
+        else:
+            eff_cnt = cnt if cnt > 0 else lv * 4
+            u = math.log1p(eff_cnt) / math.log1p(scale_max)
+            bricks = max(1, min(max_bricks, int(round(1.0 + u * (max_bricks - 1)))))
+            if bricks <= 2:
+                tier = 1
+            elif bricks <= 4:
+                tier = 2
+            elif bricks <= 7:
+                tier = 3
+            else:
+                tier = 4
+        total_bricks += bricks
+        cell_specs.append(
+            {
+                "c": c,
+                "r": r,
+                "date": day.get("date", ""),
+                "count": cnt,
+                "level": lv,
+                "bricks": bricks,
+                "tier": tier,
+            }
+        )
+
+    # Ensure zero vertical clipping even if an early-year cell has max height
+    max_needed_up = max(
+        (stage_top + 26.0) - (origin_y + sp["c"] * ec_y + sp["r"] * er_y - sp["bricks"] * brick_h)
+        for sp in cell_specs
+    )
+    if max_needed_up > 0:
+        scale_h = max(0.62, 1.0 - max_needed_up / 95.0)
+        brick_h *= scale_h
+
+    # Floating 3D Architectural Plinth (baseplate with real beveled slab thickness)
+    margin_c, margin_r = 0.72, 0.58
+    slab_th = 10.5
+    pl_b = proj(-margin_c, -margin_r)
+    pl_r = proj(cols + margin_c, -margin_r)
+    pl_f = proj(cols + margin_c, rows + margin_r)
+    pl_l = proj(-margin_c, rows + margin_r)
+    pl_top_col, pl_left_col, pl_right_col, pl_stroke = t["plinth"]
+
+    plinth_svg = [
+        # Subtle grounding ambient shadow beneath plinth
+        f'<polygon points="{pl_b[0]:.1f},{pl_b[1] + slab_th + 6:.1f} {pl_r[0]:.1f},{pl_r[1] + slab_th + 6:.1f} '
+        f'{pl_f[0]:.1f},{pl_f[1] + slab_th + 6:.1f} {pl_l[0]:.1f},{pl_l[1] + slab_th + 6:.1f}" '
+        f'fill="{t["ink1"]}" fill-opacity="{"0.035" if theme_name == "light" else "0.04"}" />',
+        # Plinth top slab
+        f'<polygon points="{pl_b[0]:.1f},{pl_b[1]:.1f} {pl_r[0]:.1f},{pl_r[1]:.1f} '
+        f'{pl_f[0]:.1f},{pl_f[1]:.1f} {pl_l[0]:.1f},{pl_l[1]:.1f}" '
+        f'fill="{pl_top_col}" stroke="{pl_stroke}" stroke-width="0.9" />',
+        # Plinth front-left skirt (along week axis)
+        f'<polygon points="{pl_l[0]:.1f},{pl_l[1]:.1f} {pl_f[0]:.1f},{pl_f[1]:.1f} '
+        f'{pl_f[0]:.1f},{pl_f[1] + slab_th:.1f} {pl_l[0]:.1f},{pl_l[1] + slab_th:.1f}" '
+        f'fill="{pl_left_col}" stroke="{pl_stroke}" stroke-width="0.8" />',
+        # Plinth front-right skirt (along weekday axis)
+        f'<polygon points="{pl_f[0]:.1f},{pl_f[1]:.1f} {pl_r[0]:.1f},{pl_r[1]:.1f} '
+        f'{pl_r[0]:.1f},{pl_r[1] + slab_th:.1f} {pl_f[0]:.1f},{pl_f[1] + slab_th:.1f}" '
+        f'fill="{pl_right_col}" stroke="{pl_stroke}" stroke-width="0.8" />',
+    ]
+
+    # Subtle architectural calibration notches along plinth front edge every 4 weeks
+    plinth_ticks: list[str] = []
+    for c_t in range(0, cols + 1, 4):
+        tx, ty = proj(c_t, rows + margin_r)
+        plinth_ticks.append(f"M {tx:.1f},{ty + 2.0:.1f} v 4.5")
+    plinth_svg.append(
+        f'<path d="{" ".join(plinth_ticks)}" fill="none" stroke="{t["tick"]}" stroke-width="0.7" stroke-opacity="0.7" />'
+    )
+
+    # Painter's algorithm sort: strictly far-to-near along screen depth
+    cell_specs.sort(key=lambda sp: (sp["c"] * ec_y + sp["r"] * er_y, sp["c"], sp["r"]))
+
+    pad = 0.115
+    base_tile_h = 2.4
+    block_elems: list[str] = []
+    peak_spec: dict[str, Any] | None = None
+    peak_top_pt: tuple[float, float] = (500.0, 150.0)
+
+    for sp in cell_specs:
+        c, r = sp["c"], sp["r"]
+        bricks = sp["bricks"]
+        tier = sp["tier"]
+        h = base_tile_h if bricks == 0 else (2.0 + bricks * brick_h)
+
+        # 4 base corners
+        b_x, b_y = proj(c + pad, r + pad)
+        r_x, r_y = proj(c + 1.0 - pad, r + pad)
+        l_x, l_y = proj(c + pad, r + 1.0 - pad)
+        f_x, f_y = proj(c + 1.0 - pad, r + 1.0 - pad)
+
+        # 4 top corners
+        bt_y = b_y - h
+        rt_y = r_y - h
+        lt_y = l_y - h
+        ft_y = f_y - h
+
+        # Track highest peak tower for architectural callout
+        if peak_spec is None or sp["count"] > peak_spec["count"]:
+            peak_spec = sp
+            peak_top_pt = ((b_x + f_x) * 0.5, (bt_y + ft_y) * 0.5)
+
+        if bricks == 0:
+            # Flat architectural Lego baseplate tile (recessed tile + faint center stud ring)
+            cx_t = (b_x + f_x) * 0.5
+            cy_t = (bt_y + ft_y) * 0.5
+            block_elems.append(
+                f'<polygon points="{l_x:.1f},{lt_y:.1f} {f_x:.1f},{ft_y:.1f} {f_x:.1f},{f_y:.1f} {l_x:.1f},{l_y:.1f}" class="b0l"/>'
+                f'<polygon points="{f_x:.1f},{ft_y:.1f} {r_x:.1f},{rt_y:.1f} {r_x:.1f},{r_y:.1f} {f_x:.1f},{f_y:.1f}" class="b0r"/>'
+                f'<polygon points="{b_x:.1f},{bt_y:.1f} {r_x:.1f},{rt_y:.1f} {f_x:.1f},{ft_y:.1f} {l_x:.1f},{lt_y:.1f}" class="b0t"/>'
+                f'<ellipse cx="{cx_t:.1f}" cy="{cy_t:.1f}" rx="2.3" ry="1.15" class="b0s"/>'
+            )
+            continue
+
+        # Active stacked building block tower
+        top_cls = f"b{tier}t" + (" peak-cap" if tier == 4 else "")
+        parts = [
+            # Front-left face
+            f'<polygon points="{l_x:.1f},{lt_y:.1f} {f_x:.1f},{ft_y:.1f} {f_x:.1f},{f_y:.1f} {l_x:.1f},{l_y:.1f}" class="b{tier}l"/>',
+            # Front-right face
+            f'<polygon points="{f_x:.1f},{ft_y:.1f} {r_x:.1f},{rt_y:.1f} {r_x:.1f},{r_y:.1f} {f_x:.1f},{f_y:.1f}" class="b{tier}r"/>',
+            # Top face
+            f'<polygon points="{b_x:.1f},{bt_y:.1f} {r_x:.1f},{rt_y:.1f} {f_x:.1f},{ft_y:.1f} {l_x:.1f},{lt_y:.1f}" class="{top_cls}"/>',
+        ]
+
+        # Crisp horizontal stacked-brick seam grooves across both visible side faces
+        if bricks >= 2:
+            seam_segs = []
+            for k in range(1, bricks):
+                dz = 2.0 + k * brick_h
+                seam_segs.append(
+                    f"M{l_x:.1f},{l_y - dz:.1f}L{f_x:.1f},{f_y - dz:.1f}L{r_x:.1f},{r_y - dz:.1f}"
+                )
+            parts.append(f'<path d="{"".join(seam_segs)}" class="b-seam"/>')
+
+        # Precision cylindrical building-block stud on top face
+        cx_t = (b_x + f_x) * 0.5
+        cy_t = (bt_y + ft_y) * 0.5
+        srx, sry, sh = 2.85, 1.45, 1.75
+        parts.append(
+            f'<path d="M{cx_t - srx:.1f},{cy_t - sh:.1f}V{cy_t:.1f}'
+            f'A{srx:.2f},{sry:.2f} 0 0 0 {cx_t + srx:.1f},{cy_t:.1f}'
+            f'V{cy_t - sh:.1f}Z" class="b{tier}l"/>'
+            f'<ellipse cx="{cx_t:.1f}" cy="{cy_t - sh:.1f}" rx="{srx:.2f}" ry="{sry:.2f}" class="{top_cls} b-stud"/>'
+        )
+        block_elems.append("".join(parts))
+
+    # Month labels neatly aligned along the front-left isometric edge
+    month_names = ["", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+    month_elems: list[str] = []
+    seen_months: set[tuple[int, int]] = set()
+    last_mx = -999.0
+    for idx, day in enumerate(cells):
+        c = idx // 7
+        r = idx % 7
+        if r == 0 and 1 <= c < cols - 1:
+            try:
+                y_m = day["date"].split("-")
+                ym_key = (int(y_m[0]), int(y_m[1]))
+                if ym_key not in seen_months:
+                    seen_months.add(ym_key)
+                    mx, my = proj(c + 0.5, rows + margin_r + 1.25)
+                    if mx - last_mx >= 48.0:
+                        last_mx = mx
+                        month_elems.append(
+                            f'<text x="{mx:.1f}" y="{my + 7:.1f}" text-anchor="middle" class="axis-lbl">{month_names[ym_key[1]]}</text>'
+                        )
+            except Exception:
+                pass
+
+    # Weekday markers along the left isometric edge (SUN / WED / SAT)
+    day_elems: list[str] = []
+    for dr, d_lbl in ((0, "SUN"), (3, "WED"), (6, "SAT")):
+        dx, dy = proj(-margin_c - 0.9, dr + 0.5)
+        day_elems.append(
+            f'<text x="{dx - 4:.1f}" y="{dy + 3:.1f}" text-anchor="end" class="axis-lbl">{d_lbl}</text>'
+        )
+
+    # Architectural Engineering Callout pointing to the Peak Monolith
+    callout_svg = ""
+    peak_date_fmt = "—"
+    peak_cnt = 0
+    if peak_spec and peak_spec["count"] > 0:
+        peak_cnt = peak_spec["count"]
+        peak_date_fmt = peak_spec["date"].replace("-", ".")
+        px, py = peak_top_pt
+        py_stud = py - 2.2
+        shelf_y = max(66.0, py_stud - 34.0)
+        if px > 700.0:
+            elbow_x = px - 26.0
+            end_x = elbow_x - 146.0
+            lbl_x = end_x
+            anchor = "start"
+        else:
+            elbow_x = px + 26.0
+            end_x = elbow_x + 146.0
+            lbl_x = elbow_x + 6.0
+            anchor = "start"
+        callout_svg = (
+            f'<g>'
+            f'<circle cx="{px:.1f}" cy="{py_stud - 7:.1f}" r="9.5" fill="none" stroke="{t["ink1"]}" stroke-width="0.65" stroke-opacity="0.32" class="pulse-ring" />'
+            f'<circle cx="{px:.1f}" cy="{py_stud - 7:.1f}" r="2.2" fill="{t["ink1"]}" class="beacon" />'
+            f'<polyline points="{px:.1f},{py_stud - 9.5:.1f} {elbow_x:.1f},{shelf_y:.1f} {end_x:.1f},{shelf_y:.1f}" '
+            f'fill="none" stroke="{t["ink3"]}" stroke-width="0.8" stroke-opacity="0.85" />'
+            f'<text x="{lbl_x:.1f}" y="{shelf_y - 5.5:.1f}" text-anchor="{anchor}" class="callout-title">PEAK // {peak_cnt} COMMITS</text>'
+            f'<text x="{lbl_x:.1f}" y="{shelf_y + 11.0:.1f}" text-anchor="{anchor}" class="callout-sub">{esc(peak_date_fmt)} · {peak_spec["bricks"]} BLOCKS</text>'
+            f"</g>"
+        )
+
+    # Ambient rising architectural stardust particles in the open skyline field
+    rng_p = random.Random(202642)
+    sky_dust: list[str] = []
+    for i in range(38):
+        dx = rng_p.uniform(46, 954)
+        dy = rng_p.uniform(52, 164)
+        dr = rng_p.uniform(0.45, 1.0)
+        dop = rng_p.uniform(0.10, 0.34)
+        sky_dust.append(
+            f'<circle cx="{dx:.1f}" cy="{dy:.1f}" r="{dr:.2f}" fill="{t["particle_dim"]}" fill-opacity="{dop:.2f}" class="sd{(i % 4) + 1}" />'
+        )
+
+    # Mini 3D Stacked-Block Legend inside bottom-left strip (5 miniature rising isometric cubes!)
+    legend_3d: list[str] = []
+    leg_tiers = [
+        (0, 1, 2.2),
+        (1, 1, 5.5),
+        (2, 2, 9.5),
+        (3, 3, 14.0),
+        (4, 4, 19.0),
+    ]
+    for li, (ltier, lbricks, lh) in enumerate(leg_tiers):
+        lx = 166.0 + li * 25.0
+        ly = 417.0
+        dx1, dy1 = 6.2, 1.5
+        dx2, dy2 = -2.4, 3.6
+        p_b = (lx, ly)
+        p_r = (lx + dx1, ly + dy1)
+        p_l = (lx + dx2, ly + dy2)
+        p_f = (lx + dx1 + dx2, ly + dy1 + dy2)
+        legend_3d.append(
+            f'<polygon points="{p_l[0]:.1f},{p_l[1] - lh:.1f} {p_f[0]:.1f},{p_f[1] - lh:.1f} {p_f[0]:.1f},{p_f[1]:.1f} {p_l[0]:.1f},{p_l[1]:.1f}" class="b{ltier}l"/>'
+            f'<polygon points="{p_f[0]:.1f},{p_f[1] - lh:.1f} {p_r[0]:.1f},{p_r[1] - lh:.1f} {p_r[0]:.1f},{p_r[1]:.1f} {p_f[0]:.1f},{p_f[1]:.1f}" class="b{ltier}r"/>'
+            f'<polygon points="{p_b[0]:.1f},{p_b[1] - lh:.1f} {p_r[0]:.1f},{p_r[1] - lh:.1f} {p_f[0]:.1f},{p_f[1] - lh:.1f} {p_l[0]:.1f},{p_l[1] - lh:.1f}" class="b{ltier}t"/>'
+        )
+        if lbricks >= 2:
+            s_step = lh / lbricks
+            lseams = "".join(
+                f"M{p_l[0]:.1f},{p_l[1] - k * s_step:.1f}L{p_f[0]:.1f},{p_f[1] - k * s_step:.1f}L{p_r[0]:.1f},{p_r[1] - k * s_step:.1f}"
+                for k in range(1, lbricks)
+            )
+            legend_3d.append(f'<path d="{lseams}" class="b-seam"/>')
+        if ltier >= 1:
+            scx = (p_b[0] + p_f[0]) * 0.5
+            scy = (p_b[1] + p_f[1]) * 0.5 - lh
+            legend_3d.append(f'<ellipse cx="{scx:.1f}" cy="{scy - 0.7:.1f}" rx="1.6" ry="0.85" class="b{ltier}t b-stud"/>')
+
+    # Build CSS classes for all 5 block shading tiers
+    tier_css = []
+    for ti, (c_top, c_left, c_right) in enumerate(t["blocks"]):
+        tier_css.append(f".b{ti}t{{fill:{c_top};}} .b{ti}l{{fill:{c_left};}} .b{ti}r{{fill:{c_right};}}")
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="100%" height="100%" role="img" aria-label="3D Isometric Contribution Blocks Heatmap for AlkaidSTART">
+  <defs>
+    <clipPath id="blk-clip">
+      <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="10" />
+    </clipPath>
+    <pattern id="blk-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="{t["grid"]}" stroke-width="0.55" stroke-opacity="{t["grid_op"]}" />
+    </pattern>
+    <radialGradient id="blk-glow" cx="62%" cy="54%" r="44%">
+      <stop offset="0%" stop-color="{t["particle"]}" stop-opacity="{t["glow_op"]}" />
+      <stop offset="100%" stop-color="{t["bg"]}" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="blk-beam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="{t["ink1"]}" stop-opacity="0" />
+      <stop offset="50%" stop-color="{t["ink1"]}" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="{t["ink1"]}" stop-opacity="0" />
+    </linearGradient>
+    <style>
+      .hdr-mono {{ font-family: {FONT_MONO}; font-size: 9.5px; letter-spacing: 1.5px; fill: {t["ink3"]}; }}
+      .axis-lbl {{ font-family: {FONT_MONO}; font-size: 8.5px; letter-spacing: 0.9px; fill: {t["ink3"]}; }}
+      .callout-title {{ font-family: {FONT_MONO}; font-size: 9.5px; font-weight: 600; letter-spacing: 1.2px; fill: {t["ink1"]}; }}
+      .callout-sub {{ font-family: {FONT_MONO}; font-size: 8.5px; letter-spacing: 1.0px; fill: {t["ink3"]}; }}
+      .foot-lbl {{ font-family: {FONT_MONO}; font-size: 8.5px; letter-spacing: 1.4px; fill: {t["ink3"]}; }}
+      .foot-val {{ font-family: {FONT_MONO}; font-size: 10.2px; font-weight: 500; fill: {t["ink1"]}; }}
+      {" ".join(tier_css)}
+      .b0s {{ fill: none; stroke: {t["ink3"]}; stroke-width: 0.5; stroke-opacity: 0.24; }}
+      .b-seam {{ fill: none; stroke: {t["block_seam"]}; stroke-width: 0.65; stroke-opacity: {t["block_seam_op"]}; }}
+      .b-stud {{ stroke: {t["stud_rim"]}; stroke-width: 0.45; stroke-opacity: {t["stud_rim_op"]}; }}
+
+      .rail-glint {{ animation: blkGlint 8.2s cubic-bezier(0.45, 0, 0.55, 1) infinite; }}
+      .peak-cap {{ animation: capPulse 3.8s ease-in-out infinite; }}
+      .beacon {{ animation: capPulse 2.6s ease-in-out infinite; }}
+      .pulse-ring {{ animation: ringFade 4.0s ease-in-out infinite; }}
+      .sd1 {{ animation: skyFloat 7.5s ease-in-out infinite; }}
+      .sd2 {{ animation: skyFloat 9.4s ease-in-out infinite 1.4s; }}
+      .sd3 {{ animation: skyFloat 8.2s ease-in-out infinite 2.8s; }}
+      .sd4 {{ animation: skyFloat 10.6s ease-in-out infinite 0.7s; }}
+
+      @keyframes blkGlint {{
+        0% {{ transform: translateX(-140px); opacity: 0; }}
+        15% {{ opacity: 0.9; }}
+        85% {{ opacity: 0.9; }}
+        100% {{ transform: translateX(1040px); opacity: 0; }}
+      }}
+      @keyframes capPulse {{
+        0%, 100% {{ opacity: 1; }}
+        50% {{ opacity: 0.58; }}
+      }}
+      @keyframes ringFade {{
+        0%, 100% {{ opacity: 0.52; }}
+        50% {{ opacity: 0.12; }}
+      }}
+      @keyframes skyFloat {{
+        0%, 100% {{ transform: translateY(0px); opacity: 0.25; }}
+        50% {{ transform: translateY(-6px); opacity: 0.78; }}
+      }}
+    </style>
+  </defs>
+
+  <g clip-path="url(#blk-clip)">
+    <rect width="{W}" height="{H}" fill="{t["bg"]}" />
+    <rect x="0" y="{stage_top:.0f}" width="{W}" height="{stage_bot - stage_top:.0f}" fill="url(#blk-grid)" />
+    <rect width="{W}" height="{H}" fill="url(#blk-glow)" />
+
+    <!-- Header Strip -->
+    <line x1="0" y1="{stage_top:.0f}" x2="{W}" y2="{stage_top:.0f}" stroke="{t["hairline"]}" stroke-width="0.9" />
+    <rect x="0" y="{stage_top - 0.6:.1f}" width="110" height="1.2" fill="url(#blk-beam)" class="rail-glint" />
+    <text x="24" y="23" class="hdr-mono">ISOMETRIC CONTRIBUTION BLOCKS // 3D VOXEL ARCHITECTURE</text>
+    <text x="976" y="23" text-anchor="end" class="hdr-mono">53 WEEKS · {yr_contrib:,} COMMITS · {active_days} ACTIVE DAYS</text>
+
+    <!-- Subtle Stage Coordinates & Floating Micro-Dust -->
+    <text x="24" y="60" class="axis-lbl">AXONOMETRIC · YAW 20° · PITCH 34°</text>
+    <text x="976" y="60" text-anchor="end" class="axis-lbl">STACKED UNIT · 1–11 LAYERS</text>
+    {"".join(sky_dust)}
+
+    <!-- 3D Floating Architectural Plinth -->
+    {"".join(plinth_svg)}
+
+    <!-- 371 Depth-Sorted 3D Stacked Building Blocks -->
+    {"".join(block_elems)}
+
+    <!-- Isometric Axis Labels & Peak Callout -->
+    {"".join(day_elems)}
+    {"".join(month_elems)}
+    {callout_svg}
+
+    <!-- Bottom Architectural Telemetry Strip -->
+    <line x1="0" y1="{stage_bot:.0f}" x2="{W}" y2="{stage_bot:.0f}" stroke="{t["hairline"]}" stroke-width="0.9" />
+    <line x1="348" y1="{stage_bot:.0f}" x2="348" y2="{H}" stroke="{t["hairline"]}" stroke-width="0.85" />
+    <line x1="696" y1="{stage_bot:.0f}" x2="696" y2="{H}" stroke="{t["hairline"]}" stroke-width="0.85" />
+
+    <!-- Compartment 1: Mini 3D Stacked-Block Legend -->
+    <text x="24" y="399" class="foot-lbl">BLOCK ELEVATION</text>
+    <text x="24" y="418" class="foot-val">0 → PEAK TIERS</text>
+    <text x="155" y="418" text-anchor="end" class="axis-lbl">0</text>
+    {"".join(legend_3d)}
+    <text x="297" y="418" class="axis-lbl">MAX</text>
+
+    <!-- Compartment 2: Skyline Metrics -->
+    <text x="372" y="399" class="foot-lbl">SKYLINE TELEMETRY</text>
+    <text x="372" y="418" class="foot-val">Peak {peak_cnt}/d ({esc(peak_date_fmt)}) · Avg {avg_active:.1f}/active d</text>
+
+    <!-- Compartment 3: Brick Assembly Count -->
+    <text x="720" y="399" class="foot-lbl">BRICK ASSEMBLY</text>
+    <text x="720" y="418" class="foot-val">{total_bricks:,} Stacked Blocks · {active_days}/371 Days</text>
+
+    <!-- Precision Crosshairs & Corner Brackets -->
+    {crosshair(348, stage_bot, 3.8, t["tick"])}
+    {crosshair(696, stage_bot, 3.8, t["tick"])}
+    {corner_brackets(W, H, 10, 8, t["tick"], 0.55)}
+  </g>
+  <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="10" fill="none" stroke="{t["border"]}" stroke-width="1" />
+</svg>'''
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # 6. FOOTER — Atmospheric Particle Horizon & Celestial Colophon
 # ─────────────────────────────────────────────────────────────────────────────
 def build_footer(theme_name: str, cfg: dict[str, Any]) -> str:
@@ -1373,6 +1837,7 @@ def generate_all(telemetry: dict[str, Any] | None = None) -> list[Path]:
             f"architecture-{theme}.svg": build_architecture(theme, cfg),
             f"works-{theme}.svg": build_works(theme, cfg, repo_meta),
             f"telemetry-{theme}.svg": build_telemetry(theme, cfg, telemetry),
+            f"blocks-{theme}.svg": build_blocks(theme, cfg, telemetry),
             f"footer-{theme}.svg": build_footer(theme, cfg),
         }
         for idx, title, code in dividers:

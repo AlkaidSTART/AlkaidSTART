@@ -375,6 +375,17 @@
 
 <br/>
 
+<!-- 3D Isometric Contribution Blocks -->
+<a href="https://github.com/AlkaidSTART">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/blocks-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/blocks-light.svg" />
+    <img src="./assets/blocks-dark.svg" alt="3D Isometric Contribution Blocks Heatmap" width="100%" />
+  </picture>
+</a>
+
+<br/>
+
 <!-- Contribution Grid Snake -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AlkaidSTART/AlkaidSTART/output/github-contribution-grid-snake-dark.svg" />
