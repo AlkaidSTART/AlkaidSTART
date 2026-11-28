@@ -69,7 +69,7 @@
     <!-- KPI 1: Contributions -->
     <text x="24" y="64" class="kpi-lbl">CONTRIBUTIONS</text>
     <text x="24" y="106" class="kpi-num">2,993</text>
-    <text x="24" y="130" class="kpi-sub">2,816 in last 12m</text>
+    <text x="24" y="130" class="kpi-sub">2,820 in last 12m</text>
     <polyline points="132,102 142,96 151,99 162,84 172,88 184,70" fill="none" stroke="#3D3D47" stroke-width="1.0" />
     <polyline points="132,102 142,96 151,99 162,84 172,88 184,70" fill="none" stroke="#FAFAFA" stroke-width="1.4" class="spark-flow" />
 
@@ -104,7 +104,7 @@
 
     <!-- Row 2: 52-Week Monochrome Contribution Particle Matrix (y=158..332) -->
     <line x1="0" y1="332" x2="1000" y2="332" stroke="#27272E" stroke-width="0.9" />
-    <text x="24" y="183" class="sec-lbl">CONTRIBUTION DENSITY MATRIX · 52 WEEKS · 2,816 RECORDED</text>
+    <text x="24" y="183" class="sec-lbl">CONTRIBUTION DENSITY MATRIX · 52 WEEKS · 2,820 RECORDED</text>
     <text x="850" y="183" text-anchor="end" class="axis-lbl">LESS</text>
     <rect x="860.0" y="175" width="9.5" height="9.5" rx="2" fill="#16161B" /><rect x="874.5" y="175" width="9.5" height="9.5" rx="2" fill="#35353F" /><rect x="889.0" y="175" width="9.5" height="9.5" rx="2" fill="#656573" /><rect x="903.5" y="175" width="9.5" height="9.5" rx="2" fill="#A4A4B0" /><rect x="918.0" y="175" width="9.5" height="9.5" rx="2" fill="#FAFAFA" />
     <text x="940" y="183" class="axis-lbl">MORE</text>

@@ -403,7 +403,7 @@
 
 <p>
   <img src="https://img.shields.io/badge/LIVE_PULSE-GITHUB_EVENTS-0F766E?style=flat-square&labelColor=F4F4F5" alt="Live Pulse" />&nbsp;
-  <sub>Auto-synced every 6 hours via GitHub Actions</sub>
+  <sub>Auto-synced every 4 hours via GitHub Actions</sub>
 </p>
 
 <!-- START_SECTION:activity -->
