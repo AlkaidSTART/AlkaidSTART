@@ -75,21 +75,26 @@ def format_event(event):
         return f"- `{date_tag}` · `INIT` — Created {ref_type} {repo_link}"
 
     elif etype == "PullRequestEvent":
-        action = payload.get("action", "opened").upper()
+        action = payload.get("action", "opened").lower()
         pr = payload.get("pull_request", {})
-        title = pr.get("title", "")
-        pr_num = pr.get("number", "")
-        pr_url = pr.get("html_url", repo_url)
-        if len(title) > 42:
+        title = (pr.get("title") or "").strip()
+        pr_num = pr.get("number") or payload.get("number", "")
+        pr_url = pr.get("html_url") or (f"{repo_url}/pull/{pr_num}" if pr_num else repo_url)
+        if not title:
+            title = f"{action.capitalize()} Pull Request #{pr_num}" if pr_num else f"{action.capitalize()} Pull Request"
+        elif len(title) > 42:
             title = title[:39] + "..."
         return f"- `{date_tag}` · `PR #{pr_num}` — [{title}]({pr_url}) in {repo_link}"
 
     elif etype == "IssuesEvent":
+        action = payload.get("action", "opened").lower()
         issue = payload.get("issue", {})
-        title = issue.get("title", "")
-        issue_num = issue.get("number", "")
-        issue_url = issue.get("html_url", repo_url)
-        if len(title) > 42:
+        title = (issue.get("title") or "").strip()
+        issue_num = issue.get("number") or payload.get("number", "")
+        issue_url = issue.get("html_url") or (f"{repo_url}/issues/{issue_num}" if issue_num else repo_url)
+        if not title:
+            title = f"{action.capitalize()} Issue #{issue_num}" if issue_num else f"{action.capitalize()} Issue"
+        elif len(title) > 42:
             title = title[:39] + "..."
         return f"- `{date_tag}` · `ISSUE #{issue_num}` — [{title}]({issue_url}) in {repo_link}"
 
