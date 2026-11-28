@@ -1,21 +1,24 @@
-name: Refresh GitHub Real-time Activity Pulse
+name: Sync Profile Telemetry & Particle Assets
 
 on:
   schedule:
-    # Runs every 6 hours automatically
+    # Runs automatically every 6 hours
     - cron: "0 */6 * * *"
   workflow_dispatch:
   push:
     branches:
       - main
     paths:
-      - ".github/scripts/**"
+      - "profile.config.json"
+      - "scripts/**"
 
 jobs:
-  telemetry-pulse:
+  sync-profile:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    timeout-minutes: 10
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -23,16 +26,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.12"
 
-      - name: Fetch and Sync GitHub Events API
+      - name: Sync GitHub GraphQL, Blog & Regenerate Monochrome Particle SVGs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python3 .github/scripts/update_activity.py
+          python3 scripts/sync_profile.py
 
-      - name: Push Telemetry Update
+      - name: Commit & Push Updated Telemetry and Assets
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "AlkaidSTART-Telemetry-Bot"
-          git diff --quiet README.md || (git add README.md && git commit -m "chore(telemetry): sync real-time GitHub activity pulse [skip ci]" && git push)
+          git add README.md assets/
+          git diff --cached --quiet || (git commit -m "chore(telemetry): sync live metrics, writing & particle assets [skip ci]" && git push)

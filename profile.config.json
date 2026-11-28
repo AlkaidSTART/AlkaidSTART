@@ -1,0 +1,152 @@
+{
+  "identity": {
+    "username": "AlkaidSTART",
+    "displayName": "Alkaid",
+    "fullName": "YuJie Ma",
+    "designation": "η URSAE MAJORIS · 摇光",
+    "role": "Full-Stack Architect & AI Agent Systems Engineer",
+    "tagline": "Resist entropy with order. Hold meaning with space.",
+    "taglineZh": "以秩序抵抗熵增，以空白承载内容 · 仰望星空，脚踏实地",
+    "quote": "路漫漫其修远兮，吾将上下而求索",
+    "philosophy": "遇事不决，可问春风。春风不遇，可问本心",
+    "location": "CHENGDU, CN",
+    "coordinates": "30.57° N · 104.06° E",
+    "timezone": "UTC+8",
+    "status": "BUILDING AI AGENTS & LOCAL-FIRST TOOLS",
+    "blogUrl": "https://alkaid.live",
+    "blogIndexUrl": "https://alkaid.live/blog/",
+    "email": "2595006848@qq.com",
+    "wechat": "AlkaidSTART"
+  },
+  "flagshipWorks": [
+    {
+      "index": "01",
+      "repo": "call-code",
+      "owner": "AlkaidSTART",
+      "title": "call-code",
+      "category": "CLI CODING AGENT",
+      "summary": "Local-first CLI coding agent built on TypeScript & Ink with file I/O, shell planning and persistent memory.",
+      "summaryZh": "本地终端编程智能体（TypeScript + Ink），自然语言驱动文件读写、长效记忆与自主规划。",
+      "url": "https://github.com/AlkaidSTART/call-code",
+      "demo": "",
+      "motif": "terminal_matrix",
+      "fallbackStars": 3,
+      "fallbackLang": "TypeScript"
+    },
+    {
+      "index": "02",
+      "repo": "coderelay",
+      "owner": "AlkaidSTART",
+      "title": "coderelay",
+      "category": "MULTI-AGENT ROUTER",
+      "summary": "Multi-agent routing gateway & TUI for adaptive task dispatch and seamless live TTY session handoff.",
+      "summaryZh": "多 Coding Agent 智能路由网关与交互式 TUI，支持自适应任务分发与 TTY 会话接管。",
+      "url": "https://github.com/AlkaidSTART/coderelay",
+      "demo": "https://gewu-academy.github.io/coderelay/",
+      "motif": "orbital_router",
+      "fallbackStars": 7,
+      "fallbackLang": "TypeScript"
+    },
+    {
+      "index": "03",
+      "repo": "Elonga",
+      "owner": "AlkaidSTART",
+      "title": "Elonga",
+      "category": "AI CONTENT STUDIO",
+      "summary": "AI content workflow & visual studio with privacy sanitization, platform tuning and local-first fallback.",
+      "summaryZh": "一体化 AI 新媒体内容推流与视觉创作台，支持隐私脱敏审查、多平台适配与本地降级运行。",
+      "url": "https://github.com/AlkaidSTART/Elonga",
+      "demo": "https://elonga-beta.vercel.app",
+      "motif": "silk_ribbon",
+      "fallbackStars": 4,
+      "fallbackLang": "TypeScript"
+    },
+    {
+      "index": "04",
+      "repo": "CreatorRelay",
+      "owner": "AlkaidSTART",
+      "title": "CreatorRelay",
+      "category": "TAURI 2 · RUST WORKSPACE",
+      "summary": "Local-first desktop creator workspace unifying cross-platform publishing, analytics and MCP workflows.",
+      "summaryZh": "本地优先、AI 驱动的 Rust + Tauri 2 创作者工作台，统一多平台发布、数据聚合与 MCP 工作流。",
+      "url": "https://github.com/AlkaidSTART/CreatorRelay",
+      "demo": "",
+      "motif": "gyro_core",
+      "fallbackStars": 1,
+      "fallbackLang": "Rust"
+    }
+  ],
+  "architecturePillars": [
+    {
+      "index": "01",
+      "title": "INTERFACE & CROSS-PLATFORM",
+      "subtitle": "Reactive UI · Desktop · Mobile",
+      "items": ["TypeScript", "React 19", "Next.js 16", "Vue 3", "Tailwind v4", "Tauri 2", "Flutter", "TanStack Query", "Zustand", "GSAP"]
+    },
+    {
+      "index": "02",
+      "title": "AI & AGENT SYSTEMS",
+      "subtitle": "Orchestration · CLI · Routing",
+      "items": ["LangGraph", "LangChain", "CrewAI", "Claude Code", "Codex", "Antigravity", "Gemini", "MCP / TTY", "Ink CLI", "Dify"]
+    },
+    {
+      "index": "03",
+      "title": "SYSTEMS & BACKEND",
+      "subtitle": "Low-Latency · Async · Native",
+      "items": ["Go / Gin", "gRPC / Protobuf", "Python", "FastAPI", "Rust", "Node.js", "NestJS", "Bun", "Socket.IO", "Pydantic"]
+    },
+    {
+      "index": "04",
+      "title": "DATA & CLOUD INFRA",
+      "subtitle": "Persistence · Edge · CI/CD",
+      "items": ["PostgreSQL", "Redis", "SQLite", "Supabase", "Prisma", "Docker", "Nginx", "GitHub Actions", "Vercel", "Cloudflare"]
+    }
+  ],
+  "fallbackTelemetry": {
+    "publicRepos": 74,
+    "originalRepos": 56,
+    "followers": 10,
+    "following": 28,
+    "totalStars": 155,
+    "totalContributions": 2993,
+    "yearlyContributions": 2344,
+    "totalPRs": 157,
+    "totalIssues": 21,
+    "currentStreak": 13,
+    "longestStreak": 15,
+    "rank": "A",
+    "languages": [
+      { "name": "TypeScript", "percent": 88.05 },
+      { "name": "JavaScript", "percent": 3.41 },
+      { "name": "Rust", "percent": 2.53 },
+      { "name": "HTML", "percent": 2.23 },
+      { "name": "CSS", "percent": 1.97 },
+      { "name": "Dart", "percent": 0.78 },
+      { "name": "Vue", "percent": 0.57 },
+      { "name": "Python", "percent": 0.46 }
+    ]
+  },
+  "fallbackBlogPosts": [
+    {
+      "date": "2026.07.27",
+      "readTime": "7 min",
+      "title": "深入浅出 React Hooks 原理：从 Fiber 的 memoizedState 链表讲到 updateQueue 调度",
+      "url": "https://alkaid.live/blog/react-hooks/",
+      "summary": "剖析 Hook 链表挂载机制、闭包陷阱本质与并发调度队列。"
+    },
+    {
+      "date": "2026.04.10",
+      "readTime": "8 min",
+      "title": "TanStack Query 技术指南：异步状态管理核心实践",
+      "url": "https://alkaid.live/blog/TanStack%20Query%20%E6%8A%80%E6%9C%AF%E6%8C%87%E5%8D%97%EF%BC%9A%E5%BC%82%E6%AD%A5%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E6%A0%B8%E5%BF%83%E5%AE%9E%E8%B7%B5/",
+      "summary": "解析服务端状态生命周期、SWR 缓存策略、后台静默重验与乐观更新。"
+    },
+    {
+      "date": "2026.04.02",
+      "readTime": "3 min",
+      "title": "0 基础入门 Zustand：新手友好的 React 状态管理方案",
+      "url": "https://alkaid.live/blog/0%20%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%20Zustand%EF%BC%9A%E6%96%B0%E6%89%8B%E5%8F%8B%E5%A5%BD%E7%9A%84%20React%20%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/",
+      "summary": "基于发布订阅与 useSyncExternalStore 的零样板原子化状态实践。"
+    }
+  ]
+}

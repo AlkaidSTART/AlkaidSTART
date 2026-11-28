@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 44" width="100%" height="100%" role="img" aria-label="03 TELEMETRY OBSERVATORY &amp; LIVE PULSE">
+  <defs>
+    <linearGradient id="div-glint-03" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#09090B" stop-opacity="0" />
+      <stop offset="50%" stop-color="#09090B" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#09090B" stop-opacity="0" />
+    </linearGradient>
+    <clipPath id="div-rail-03">
+      <rect x="360" y="19" width="482" height="6" />
+    </clipPath>
+    <style>
+      .div-idx { font-family: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, Monaco, Consolas, monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 1.4px; fill: #09090B; }
+      .div-title { font-family: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, Monaco, Consolas, monospace; font-size: 10.5px; letter-spacing: 1.8px; fill: #52525B; }
+      .div-code { font-family: 'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, Monaco, Consolas, monospace; font-size: 9.5px; letter-spacing: 1.4px; fill: #71717A; }
+      .div-pulse { animation: divGlide 6.5s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+      @keyframes divGlide {
+        0% { transform: translateX(270px); opacity: 0; }
+        12% { opacity: 1; }
+        88% { opacity: 1; }
+        100% { transform: translateX(862px); opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Left Index Marker -->
+  <rect x="2" y="13" width="28" height="18" rx="3" fill="#F0F0F3" stroke="#E2E2E7" stroke-width="0.8" />
+  <text x="16" y="25.2" text-anchor="middle" class="div-idx">03</text>
+  <text x="42" y="25.5" class="div-title">TELEMETRY OBSERVATORY &amp; LIVE PULSE</text>
+
+  <!-- Precision Architectural Datum Rail -->
+  <line x1="360" y1="22" x2="842" y2="22" stroke="#E7E7EC" stroke-width="0.9" />
+  <path d="M 376.0,22.0 v 5.1 M 400.0,22.0 v 3.0 M 424.0,22.0 v 3.0 M 448.0,22.0 v 3.0 M 472.0,22.0 v 3.0 M 496.0,22.0 v 5.1 M 520.0,22.0 v 3.0 M 544.0,22.0 v 3.0 M 568.0,22.0 v 3.0 M 592.0,22.0 v 3.0 M 616.0,22.0 v 5.1 M 640.0,22.0 v 3.0 M 664.0,22.0 v 3.0 M 688.0,22.0 v 3.0 M 712.0,22.0 v 3.0 M 736.0,22.0 v 5.1 M 760.0,22.0 v 3.0 M 784.0,22.0 v 3.0 M 808.0,22.0 v 3.0" fill="none" stroke="#C4C4CD" stroke-width="0.7" stroke-opacity="0.55" />
+  <g stroke="#C4C4CD" stroke-width="0.85" stroke-opacity="0.85"><line x1="356.8" y1="22.0" x2="363.2" y2="22.0" /><line x1="360.0" y1="18.8" x2="360.0" y2="25.2" /></g>
+  <g stroke="#C4C4CD" stroke-width="0.85" stroke-opacity="0.85"><line x1="838.8" y1="22.0" x2="845.2" y2="22.0" /><line x1="842.0" y1="18.8" x2="842.0" y2="25.2" /></g>
+
+  <!-- Animated Travelling Particle Pulse -->
+  <g clip-path="url(#div-rail-03)">
+    <rect x="0" y="21.3" width="84" height="1.4" fill="url(#div-glint-03)" class="div-pulse" />
+  </g>
+
+  <!-- Right Spec Code -->
+  <text x="994" y="25.2" text-anchor="end" class="div-code">OBSERVATORY.03</text>
+</svg>

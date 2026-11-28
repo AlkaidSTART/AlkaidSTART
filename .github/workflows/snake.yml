@@ -1,4 +1,4 @@
-name: Generate GitHub Contribution Snake
+name: Generate Monochrome Contribution Snake
 
 on:
   schedule:
@@ -8,6 +8,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - ".github/workflows/snake.yml"
 
 jobs:
   generate-snake:
@@ -17,15 +19,15 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - name: Generate Contribution Grid Snake SVGs
+      - name: Generate Pure Monochrome Contribution Grid Snake SVGs
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: AlkaidSTART
           outputs: |
-            dist/github-contribution-grid-snake.svg?color_snake=#ea580c&color_dots=#f4f4f5,#fed7aa,#fb923c,#ea580c,#9a3412
-            dist/github-contribution-grid-snake-dark.svg?color_snake=#fb923c&color_dots=#09090b,#431407,#9a3412,#ea580c,#fdba74
+            dist/github-contribution-grid-snake.svg?color_snake=#09090b&color_dots=#f4f4f5,#d4d4d8,#a1a1aa,#52525b,#09090b
+            dist/github-contribution-grid-snake-dark.svg?color_snake=#fafafa&color_dots=#16161b,#35353f,#656573,#a4a4b0,#fafafa
 
-      - name: Deploy Snake SVG to output branch
+      - name: Deploy Monochrome Snake SVGs to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
